@@ -36,7 +36,7 @@ red wire must be connected to this pin 1 (dot) in chip
 
 
 
-# Download full flash mermory firmware Stock Firmware and Openwrt
+# Download full stock firmware; Stock Firmware and Openwrt
 
 
 https://drive.google.com/drive/folders/1-XOLDLbs5zxp0DNDm0xBgcn5iUWfvwXc?usp=drive_link
