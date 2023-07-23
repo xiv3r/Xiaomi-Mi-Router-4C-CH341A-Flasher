@@ -28,7 +28,7 @@ red wire must be connected to this pin 1 (dot) in chip
 
 
 
-# Download full stock firmware; Stock Firmware and Openwrt
+# Download firmware; | Stock Firmware | Openwrt | X-WRT | 
 
 
 https://drive.google.com/drive/folders/1-XOLDLbs5zxp0DNDm0xBgcn5iUWfvwXc?usp=drive_link
