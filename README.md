@@ -4,6 +4,7 @@
    
    Drivers: https://drive.google.com/drive/folders/1MzpA0rRrLcBTUIOpg0YtSNExIpj4wwqU?usp=drive_link
 
+Steps: connect ch341a clip to 4c router IC, open neoprogrammer and detect the chip select the router IC, read the IC, erase the ic, load the 16mb firmware (stock or openwrt) then write IC click yes and wait and start configure your router
 
 ![image](https://github.com/xiv3r/Xiaomi-Router-4C-CH34A-flash-firmware/assets/117867334/704a2efb-d911-4737-8670-8480cfe073e0)
 
@@ -27,16 +28,9 @@ red wire must be connected to this pin 1 (dot) in chip
 
 
 
-
-
-
-
-
-
-
-
-
 # Download full stock firmware; Stock Firmware and Openwrt
 
 
 https://drive.google.com/drive/folders/1-XOLDLbs5zxp0DNDm0xBgcn5iUWfvwXc?usp=drive_link
+
+
