@@ -1,10 +1,23 @@
 # Flashing Xiaomi Router Flash Memory using Neoprogrammer and CH341A flasher
 
-   Neoprogrammer 2.1.0.10 download link: https://drive.google.com/file/d/15SwiXn7tV8QSkxxueQNKGZabhwdOGU28/view?usp=drivesdk
-   
-   Drivers: https://drive.google.com/drive/folders/1MzpA0rRrLcBTUIOpg0YtSNExIpj4wwqU?usp=drive_link
 
-Steps: connect ch341a clip to 4c router IC, open neoprogrammer and detect the chip select the router IC, read the IC, erase the ic, load the 16mb firmware (stock or openwrt) then write IC click yes and wait and start configure your router
+
+  # Windows
+
+  Download firmware; | Stock Firmware | Openwrt | X-WRT | 
+
+
+  https://drive.google.com/drive/folders/1-XOLDLbs5zxp0DNDm0xBgcn5iUWfvwXc?usp=drive_link
+
+
+  Neoprogrammer 2.1.0.10 download link: https://drive.google.com/file/d/15SwiXn7tV8QSkxxueQNKGZabhwdOGU28/view?usp=drivesdk
+   
+  Drivers: https://drive.google.com/drive/folders/1MzpA0rRrLcBTUIOpg0YtSNExIpj4wwqU?usp=drive_link
+
+  Steps: connect ch341a clip to 4c router IC, open neoprogrammer and detect the chip select the router IC, read the IC, erase the ic, load the 16mb firmware 
+  (stock or openwrt) then write IC click yes and wait and start configure your router
+
+
 
 ![image](https://github.com/xiv3r/Xiaomi-Router-4C-CH34A-flash-firmware/assets/117867334/704a2efb-d911-4737-8670-8480cfe073e0)
 
@@ -29,28 +42,25 @@ red wire must be connected to this pin 1 (dot) in chip
 
 
 
-# Download firmware; | Stock Firmware | Openwrt | X-WRT | 
-
-
-  https://drive.google.com/drive/folders/1-XOLDLbs5zxp0DNDm0xBgcn5iUWfvwXc?usp=drive_link
-
-
 # For Linux
    
    CH341a Driver: [driver.zip](https://github.com/xiv3r/Xiaomi-Router-4C-CH341A-flasher/files/12224825/driver.zip)
  
    Driver installation:
-         extract the driver.zip and open your root terminal then drop the unzip driver folder to the terminal or manually locate the driver like cd /home/(name)/driver
+         extract the driver.zip and open your root terminal then drop the unzip driver folder to the terminal or manually locate the driver like cd 
+  /home/(name)/driver
+
+![Screenshot_20230801_132017](https://github.com/xiv3r/Xiaomi-Router-4C-CH341A-flasher/assets/117867334/fc367842-6724-4f66-80a5-6409bd93190b)
 
    Execute root terminal type:
 
-    sudo make all && sudo make install
+    sudo make && sudo make install
 
 # Flashing using flashrom
  
   First Backup eeprom dump firmware:
 
-    flashrom --programmer ch341a_spi -r backup.bin 
+    flashrom -VV --programmer ch341a_spi -r backup.bin 
 
   Flash new dump firmware:
 
