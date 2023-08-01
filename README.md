@@ -28,9 +28,30 @@ red wire must be connected to this pin 1 (dot) in chip
 
 
 
+
 # Download firmware; | Stock Firmware | Openwrt | X-WRT | 
 
 
-https://drive.google.com/drive/folders/1-XOLDLbs5zxp0DNDm0xBgcn5iUWfvwXc?usp=drive_link
+  https://drive.google.com/drive/folders/1-XOLDLbs5zxp0DNDm0xBgcn5iUWfvwXc?usp=drive_link
 
 
+# For Linux
+   
+   CH341a Driver: [driver.zip](https://github.com/xiv3r/Xiaomi-Router-4C-CH341A-flasher/files/12224825/driver.zip)
+ 
+   Driver installation:
+         extract the driver.zip and open your root terminal then drop the unzip driver folder to the terminal or manually locate the driver like cd /home/(name)/driver
+
+   Execute root terminal type:
+
+    sudo make all && sudo make install
+
+# Flashing using flashrom
+ 
+  First Backup eeprom dump firmware:
+
+    flashrom --programmer ch341a_spi -r backup.bin 
+
+  Flash new dump firmware:
+
+    flashrom -VV --programmer ch341a_spi -w /home/user/Downloads/backup.bin
