@@ -5,14 +5,19 @@
   # Windows
 
   Download firmware; | Stock Firmware | Openwrt | X-WRT | 
-
-
+  
   https://drive.google.com/drive/folders/1-XOLDLbs5zxp0DNDm0xBgcn5iUWfvwXc?usp=drive_link
 
 
-  Neoprogrammer 2.1.0.10 download link: https://drive.google.com/file/d/15SwiXn7tV8QSkxxueQNKGZabhwdOGU28/view?usp=drivesdk
+  Neoprogrammer 2.1.0.10 download link:
+  
+  https://drive.google.com/file/d/15SwiXn7tV8QSkxxueQNKGZabhwdOGU28/view?usp=drivesdk
    
-  Drivers: https://drive.google.com/drive/folders/1MzpA0rRrLcBTUIOpg0YtSNExIpj4wwqU?usp=drive_link
+  CH341A Drivers:
+  
+  https://drive.google.com/drive/folders/1MzpA0rRrLcBTUIOpg0YtSNExIpj4wwqU?usp=drive_link
+
+
 
   Steps: connect ch341a clip to 4c router IC, open neoprogrammer and detect the chip select the router IC, read the IC, erase the ic, load the 16mb firmware 
   (stock or openwrt) then write IC click yes and wait and start configure your router
