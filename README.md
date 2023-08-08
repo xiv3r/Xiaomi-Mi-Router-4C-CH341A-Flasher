@@ -1,5 +1,6 @@
 # Flashing Xiaomi Router Flash Memory using Neoprogrammer and CH341A flasher
 
+note: This dump firmware is only for SPI EEPROM GIGA DEVICE GD25Q128B/C/xxxx
 
 
   # Windows
@@ -61,7 +62,7 @@ red wire must be connected to this pin 1 (dot) in chip
 
     sudo make && sudo make install
 
-# Flashing using flashrom
+# Flashing with Linux using Flashrom
  
   First Backup eeprom dump firmware:
 
