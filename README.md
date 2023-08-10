@@ -1,6 +1,6 @@
 # Flashing Xiaomi Router 4C using ch341a usb programmer
 
-- Note that this dump firmware is only for GIGA DEVICE GD25Q128 B/C/XXXX
+- Note: This dump firmware is only for GIGA DEVICE GD25Q128 B/C/XXXX
 
 
 
@@ -16,7 +16,7 @@
   
      [Neoprogrammer](https://github.com/xiv3r/Xiaomi-Router-4C-CH341A-flasher/releases/download/V1/NeoProgrammer.V2.2.0.10.zip)
 
-- ASProgrammer:
+- ASProgrammer 2.0.4:
 
      [ASProgrammer](https://github.com/xiv3r/Xiaomi-Router-4C-CH341A-flasher/releases/download/V1/AsProgrammer_2.0.4.zip)
 
