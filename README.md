@@ -1,26 +1,27 @@
-# Flashing Xiaomi Router Flash Memory using Neoprogrammer and CH341A flasher
+# Flashing Xiaomi Router 4C using ch341a usb programmer
 
-note: This dump firmware is only for SPI EEPROM GIGA DEVICE GD25Q128B/C/xxxx
+- Note that this dump firmware is only for GIGA DEVICE GD25Q128 B/C/XXXX
 
 
-  # Windows
 
-  Download firmware; | Stock Firmware | Openwrt | X-WRT | 
+
+# Windows
+
+- Download Firmware: | Stock Firmware | Openwrt | X-WRT | Keenetic | PCWRT | ImmortalWRT | Padavan |
+
+     [Full Dump Firmware](https://github.com/xiv3r/Xiaomi-Router-4C-CH341A-flasher/releases/tag/V1)
+
+
+- Neoprogrammer 2.1.0.10 download link:
   
-  https://drive.google.com/drive/folders/1-XOLDLbs5zxp0DNDm0xBgcn5iUWfvwXc?usp=drive_link
+     [Neoprogrammer](https://github.com/xiv3r/Xiaomi-Router-4C-CH341A-flasher/releases/download/V1/NeoProgrammer.V2.2.0.10.zip.)
+
+- ASProgrammer:
+
+     [ASProgrammer](https://github.com/xiv3r/Xiaomi-Router-4C-CH341A-flasher/releases/download/V1/AsProgrammer_2.0.4.zip)
 
 
-  Neoprogrammer 2.1.0.10 download link:
-  
-  https://drive.google.com/file/d/15SwiXn7tV8QSkxxueQNKGZabhwdOGU28/view?usp=drivesdk
-   
-  CH341A Drivers:
-  
-  https://drive.google.com/drive/folders/1MzpA0rRrLcBTUIOpg0YtSNExIpj4wwqU?usp=drive_link
-
-
-
-  Steps: connect ch341a clip to 4c router IC, open neoprogrammer and detect the chip select the router IC, read the IC, erase the ic, load the 16mb firmware 
+- Steps: connect ch341a clip to 4c router IC, open neoprogrammer and detect the chip select the router IC, read the IC, erase the ic, load the 16mb firmware 
   (stock or openwrt) then write IC click yes and wait and start configure your router
 
 
@@ -39,7 +40,7 @@ note: This dump firmware is only for SPI EEPROM GIGA DEVICE GD25Q128B/C/xxxx
 ![image](https://github.com/xiv3r/Xiaomi-Router-4C-CH34A-flash-firmware/assets/117867334/76807418-5626-4829-a0f4-aebe305701ba)
 ![image](https://github.com/xiv3r/Xiaomi-Router-4C-CH34A-flash-firmware/assets/117867334/5621d78b-b314-4ba8-8fec-1badffd65141)
 
-red wire must be connected to this pin 1 (dot) in chip
+- Red wire must be connected to this pin #1 (dot) in chip
 
 ![image](https://github.com/xiv3r/Xiaomi-Router-4C-CH34A-flash-firmware/assets/117867334/466c5aad-61c9-498a-bd1e-c9171fe64c86)
 
@@ -50,24 +51,28 @@ red wire must be connected to this pin 1 (dot) in chip
 
 # For Linux
    
-   CH341a Driver: [driver.zip](https://github.com/xiv3r/Xiaomi-Router-4C-CH341A-flasher/files/12224825/driver.zip)
- 
-   Driver installation:
-         extract the driver.zip and open your root terminal then drop the unzip driver folder to the terminal or manually locate the driver like cd 
-  /home/(name)/driver
+- CH341a Linux Driver:
+
+   [CH341A Driver.zip](https://github.com/xiv3r/Xiaomi-Router-4C-CH341A-flasher/files/12224825/driver.zip)
+
+
+- Driver installation:
+  
+Extract the driver.zip and open your root terminal then drop the unzip driver folder to the terminal or manually locate the driver like cd /home/(name)/driver
 
 ![Screenshot_20230801_132017](https://github.com/xiv3r/Xiaomi-Router-4C-CH341A-flasher/assets/117867334/fc367842-6724-4f66-80a5-6409bd93190b)
 
-   Execute root terminal type:
 
-    sudo make && sudo make install
+- Execute root terminal type:
+
+      sudo make && sudo make install
 
 # Flashing with Linux using Flashrom
  
-  First Backup eeprom dump firmware:
+- First Backup eeprom dump firmware:
 
-    flashrom -VV --programmer ch341a_spi -r backup.bin 
+      flashrom -VV --programmer ch341a_spi -r backup.bin 
 
-  Flash new dump firmware:
+- Flash new dump firmware:
 
-    flashrom -VV --programmer ch341a_spi -w /home/user/Downloads/backup.bin
+      flashrom -VV --programmer ch341a_spi -w /home/user/Downloads/backup.bin
