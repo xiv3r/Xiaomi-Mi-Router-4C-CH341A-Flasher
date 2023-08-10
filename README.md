@@ -14,7 +14,7 @@
 
 - Neoprogrammer 2.1.0.10 download link:
   
-     [Neoprogrammer](https://github.com/xiv3r/Xiaomi-Router-4C-CH341A-flasher/releases/download/V1/NeoProgrammer.V2.2.0.10.zip.)
+     [Neoprogrammer](https://github.com/xiv3r/Xiaomi-Router-4C-CH341A-flasher/releases/download/V1/NeoProgrammer.V2.2.0.10.zip)
 
 - ASProgrammer:
 
