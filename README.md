@@ -68,11 +68,15 @@ Extract the driver.zip and open your root terminal then drop the unzip driver fo
       sudo make && sudo make install
 
 # Flashing with Linux using Flashrom
- 
-- First Backup eeprom dump firmware:
 
-      flashrom -VV --programmer ch341a_spi -r backup.bin 
+- Note: chip type depends on your EEPROM type like GD25Q128B, GD25Q128C and GD25Q128X (generic) you may add it to the -c flags before backup or flashing
+
+
+ 
+- First Backup eeprom dump firmware: 
+
+      flashrom -VV -p ch341a_spi -c GD25Q128 -r backup.bin 
 
 - Flash new dump firmware:
 
-      flashrom -VV --programmer ch341a_spi -w /home/user/Downloads/backup.bin
+      flashrom -VV -p ch341a_spi -c GD25Q128 -v -E -w /home/user/Downloads/backup.bin
