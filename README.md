@@ -69,14 +69,14 @@ Extract the driver.zip and open your root terminal then drop the unzip driver fo
 
 # Flashing with Linux using Flashrom
 
-- Note: chip type depends on your EEPROM type like GD25Q128B, GD25Q128C and GD25Q128X (generic) you may add it to the -c flags before backup or flashing
+- Note: chip type depends on your EEPROM type detected by flashrom like GD25B128B/'GD25Q128B', GD25Q127C/'GD25Q128C' you may add it to the -c flags before backup or flashing
 
 
  
-- First Backup eeprom dump firmware: 
+- Backup Dump firmware: 
 
-      flashrom -VV -p ch341a_spi -c GD25Q128 -r backup.bin 
+      flashrom -VV -p ch341a_spi -c GD25B128B/GD25Q128B -r MIR4C-dump.bin
 
-- Flash new dump firmware:
+- Flash New Dump firmware:
 
-      flashrom -VV -p ch341a_spi -c GD25Q128 -v -E -w /home/user/Downloads/backup.bin
+      flashrom -VV -p ch341a_spi -c GD25B128B/GD25Q128B -v -E -w /home/user/Downloads/( your New firmware).bin
