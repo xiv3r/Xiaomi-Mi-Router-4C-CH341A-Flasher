@@ -47,9 +47,14 @@
 ![image](https://github.com/xiv3r/Xiaomi-Router-4C-CH34A-flash-firmware/assets/117867334/dd03fa11-4b8d-47f5-b878-eb790ec73332)
 
 
+# Linux
 
 
-# For Linux
+- install flashrom:
+
+      apt update
+  
+      apt install flashrom -y
    
 - CH341a Linux Driver:
 
