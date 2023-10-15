@@ -50,7 +50,7 @@
 # <h1 align="center"> Linux </h1>
 
 
-- install flashrom:
+- Install Flashrom:
 
       apt update
   
