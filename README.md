@@ -60,7 +60,7 @@
 - CH341a Linux Driver:
 
 
-   [CH341A Driver.zip](https://github.com/xiv3r/Xiaomi-Router-4C-CH341A-flasher/files/12224825/driver.zip)
+   [CH341A Driver](https://github.com/xiv3r/Xiaomi-Router-4C-CH341A-flasher/files/12224825/driver.zip)
 
 
 - Driver installation:
