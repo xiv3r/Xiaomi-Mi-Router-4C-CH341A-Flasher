@@ -78,7 +78,9 @@ Extract the driver.zip and open your root terminal then drop the unzip driver fo
 
 - Note: chip type depends on your EEPROM type detected by flashrom like GD25B128B/'GD25Q128B', GD25Q127C/'GD25Q128C' you may add it to the -c flags before backup or flashing
 
+- To Detect Flash the Chip execute the command below:
 
+      flashrom -VV -p ch341a_spi -r backup.bin
  
 - Backup Dump firmware: 
 
