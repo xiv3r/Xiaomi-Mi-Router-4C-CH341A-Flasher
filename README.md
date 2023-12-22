@@ -11,11 +11,6 @@
 
      [Full Dump Firmware](https://github.com/xiv3r/Xiaomi-Router-4C-CH341A-flasher/releases/tag/V1)
 
-
-- Neoprogrammer 2.1.0.10:
-  
-     [Neoprogrammer](https://github.com/xiv3r/Xiaomi-Router-4C-CH341A-flasher/releases/download/V1/NeoProgrammer.V2.2.0.10.zip)
-
 - ASProgrammer 2.0.4:
 
      [ASProgrammer](https://github.com/xiv3r/Xiaomi-Router-4C-CH341A-flasher/releases/download/V1/AsProgrammer_2.0.4.zip)
