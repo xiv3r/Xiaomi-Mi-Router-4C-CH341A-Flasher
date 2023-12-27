@@ -44,7 +44,13 @@
 
 # <h1 align="center"> Linux </h1>
 
+- Install IMSProg with Graphical Interface
 
+  1. Download [IMSProgrammer](https://github.com/xiv3r/Xiaomi-Router-4C-CH341A-flasher/releases/download/V1/imsprog_1.1.2-12_amd64.deb)
+
+  2. type:`dpkg -i imsprog_1.1.2-12_amd64.deb`
+
+ 
 - Install Flashrom:
 
       apt update
@@ -52,7 +58,8 @@
       apt install flashrom -y
   
    
-- CH341a Linux Driver:
+- CH341a Linux Driver (optional)
+- plug your ch341a Programmer and type `lsusb` and look if your device is detected
 
 
    [CH341A Driver](https://github.com/xiv3r/Xiaomi-Router-4C-CH341A-flasher/files/12224825/driver.zip)
