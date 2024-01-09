@@ -49,9 +49,11 @@
 
   1. Download [IMSProgrammer](https://github.com/xiv3r/Xiaomi-Router-4C-CH341A-flasher/releases/download/V1/imsprog_1.1.2-12_amd64.deb)
 
-  2. type:`dpkg -i imsprog_1.1.2-12_amd64.deb`
+  2. type:`cd /home/*/Downloads`
+  
+  3. type:`sudo dpkg -i imsprog_1.1.2-12_amd64.deb`
  
-  3. run IMSProg from application windows
+  4. run IMSProg from application windows
 
  
 #### Install Flashrom:
