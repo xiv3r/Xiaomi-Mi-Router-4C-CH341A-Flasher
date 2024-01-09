@@ -1,6 +1,7 @@
 # <h1 align="center">Flashing Xiaomi Router 4C using CH341A USB Programmer</h1>
 
-- Note: This dump firmware is only for GIGA DEVICE GD25Q128B|C
+- Note: unchecked `verify` from the programmer settings before flashing it
+- Note: `unprotect` eeprom before flashing...
 
 
 
