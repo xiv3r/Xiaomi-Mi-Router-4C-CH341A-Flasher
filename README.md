@@ -17,9 +17,8 @@
      [ASProgrammer](https://github.com/xiv3r/Xiaomi-Router-4C-CH341A-flasher/releases/download/V1/AsProgrammer_2.0.4.zip)
 
 
-- Steps: connect ch341a clip to 4c router IC, open neoprogrammer and detect the chip select the router IC, read the IC, erase the ic, load the 16mb firmware 
-  (stock or openwrt) then write IC click yes and wait and start configure your router
-
+- Steps: connect the ch341a clip to Xiaomi 4c router EEPROM, open asprogrammer then `detect` the chip select the specific router IC model, click `read` the IC and make a backup then proceed to erase ic, load the 16mb firmware into it
+  (stock, openwrt, padavan, keenetic, immortal) then click `write` IC click yes and wait after it finish finally connect your router to your pc and open 192.168.1.1(3rd party) or 192.168.31.1(stock)
 
 
 ![image](https://github.com/xiv3r/Xiaomi-Router-4C-CH34A-flash-firmware/assets/117867334/704a2efb-d911-4737-8670-8480cfe073e0)
@@ -45,7 +44,7 @@
 
 # <h1 align="center"> Linux </h1>
 
-#### Install IMSProg with Graphical Interface
+### Install IMSProg with Graphical Interface
 
   1. Download [IMSProgrammer](https://github.com/xiv3r/Xiaomi-Router-4C-CH341A-flasher/releases/download/V1/imsprog_1.1.2-12_amd64.deb)
 
@@ -56,21 +55,22 @@
   4. run IMSProg from application windows
 
  
-#### Install Flashrom:
+### Install Flashrom:
 
-      apt update
+     sudo apt update
   
-      apt install flashrom -y
+     sudo apt install flashrom -y
   
    
 - CH341a Linux Driver (optional)
-- plug your ch341a Programmer and type `lsusb` and look if your device is detected
+
+- plug your ch341a Programmer on your pc and type `lsusb` and look if your device is detected
 
 
    [CH341A Driver](https://github.com/xiv3r/Xiaomi-Router-4C-CH341A-flasher/files/12224825/driver.zip)
 
 
-- Driver installation:
+- Driver installation (Optional):
   
 Extract the driver.zip and open your root terminal then drop the unzip driver folder to the terminal or manually locate the driver like cd /home/(name)/driver
 
