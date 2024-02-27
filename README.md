@@ -46,7 +46,7 @@
 
 ### Install IMSProg with Graphical Interface
 
-  1. Download [IMSProgrammer](https://github.com/xiv3r/Xiaomi-Router-4C-CH341A-flasher/releases/download/V1/imsprog_1.1.2-12_amd64.deb)
+  1. Download [IMSProgrammer](https://github.com/xiv3r/Xiaomi-Router-4C-CH341A-flasher/releases/download/V1/imsprog_1.3.1-2_amd64.deb)
 
   2. type:`cd /home/*/Downloads`
   
