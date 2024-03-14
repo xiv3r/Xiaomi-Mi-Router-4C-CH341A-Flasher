@@ -1,9 +1,8 @@
 # <h1 align="center">Flashing Xiaomi Router 4C using CH341A USB Programmer</h1>
 
 - Note: unchecked `verify` from the programmer settings before flashing it
-- Note: `unprotect` eeprom before flashing...
-
-
+- Note: `unprotect` eeprom before flashing..
+- Note:(Dangerous and irreversible, set only required options (if you're failed buy new eeprom and replace the old one then solder it unto the board) if you follow, then you can reflash EEPROM 100,000 times. you have to do if the programmer unable to read eeprom sectors first read the `SREG or Status Register` and `unchecked all `checked area or set all 1 numbers into `0` and `Write Register` then begin flashing 
 
 
 # <h1 align="center"> Windows </h1>
