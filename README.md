@@ -53,6 +53,8 @@
  
   4. run IMSProg from application windows
 
+  5. [IMSprog overview](https://github.com/bigbigmdm/IMSProg)
+
  
 ### Install Flashrom:
 
