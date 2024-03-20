@@ -49,7 +49,7 @@
 
   2. type:`cd /home/*/Downloads`
   
-  3. type:`sudo dpkg -i imsprog_1.1.2-12_amd64.deb`
+  3. type:`sudo dpkg -i imsprog_1.3.1-2_amd64.deb`
  
   4. run IMSProg from application windows
 
