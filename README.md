@@ -15,6 +15,7 @@
 
      [ASProgrammer](https://github.com/xiv3r/Xiaomi-Router-4C-CH341A-flasher/releases/download/V1/AsProgrammer_2.0.4.zip)
 
+- Download `CH341ASER.EXE` & `CH341APAR.EXE` and install
 
 - Steps: connect the ch341a clip to Xiaomi 4c router EEPROM, open asprogrammer then `detect` the chip select the specific router IC model, click `read` the IC and make a backup then proceed to erase ic, load the 16mb firmware into it
   (stock, openwrt, padavan, keenetic, immortal) then click `write` IC click yes and wait after it finish finally connect your router to your pc and open 192.168.1.1(3rd party) or 192.168.31.1(stock)
@@ -45,15 +46,21 @@
 
 ### Install IMSProg with Graphical Interface
 
+  - Dependencies:
+
+        sudo apt update
+        sudo apt install cmake g++ libusb-1.0-0-dev qtbase5-dev pkgconf system-dev udev -y
+
   1. Download [IMSProgrammer](https://github.com/xiv3r/Xiaomi-Router-4C-CH341A-flasher/releases/download/V1/imsprog_1.3.1-2_amd64.deb)
 
   2. type:`cd /home/*/Downloads`
   
-  3. type:`sudo dpkg -i imsprog_1.3.1-2_amd64.deb`
+  3. type:`sudo dpkg -i imsprog_1.3.1-2_amd64.deb ; apt --fix-broken install ; dpkg --configure -a`
  
   4. run IMSProg from application windows
 
   5. [IMSprog overview](https://github.com/bigbigmdm/IMSProg)
+
 
  
 ### Install Flashrom:
@@ -63,15 +70,17 @@
      sudo apt install flashrom -y
   
    
-- CH341a Linux Driver (optional)
+- Download CH341PAR_LINUX.zip & CH341SER_LINUX.zip Drivers (optional)
 
-- plug your ch341a Programmer on your pc and type `lsusb` and look if your device is detected
+- Plug your ch341a Programmer on your pc and type `lsusb` and look if your device is detected
 
 
    [CH341A Driver](https://github.com/xiv3r/Xiaomi-Router-4C-CH341A-flasher/files/12224825/driver.zip)
 
 
 - Driver installation (Optional):
+
+   Dependencies: sudo apt install bc build-essential gcc cmake -y
   
 Extract the driver.zip and open your root terminal then drop the unzip driver folder to the terminal or manually locate the driver like cd /home/(name)/driver
 
