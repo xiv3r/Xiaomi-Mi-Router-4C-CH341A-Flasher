@@ -72,6 +72,10 @@
    
 - Download [CH341PAR_LINUX.zip](https://raw.githubusercontent.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/main/CH341PAR_LINUX.ZIP) & [CH341SER_LINUX.zip](https://raw.githubusercontent.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/main/CH341SER_LINUX.ZIP) Drivers (optional)
 
+- unzip the drivers and change directory `cd /home/*/Downloads/CH341PAR` & `cd /home/*Downloads/CH341SER`
+
+- building the driver `sudo make ; sudo make install`
+
 - Plug your ch341a Programmer on your pc and type `lsusb` and look if your device is detected
 
 
@@ -80,7 +84,7 @@
 
 - Driver installation (Optional):
 
-   Dependencies: sudo apt install bc build-essential gcc cmake -y
+   Dependencies: `sudo apt install bc build-essential gcc cmake -y`
   
 Extract the driver.zip and open your root terminal then drop the unzip driver folder to the terminal or manually locate the driver like cd /home/(name)/driver
 
