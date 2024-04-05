@@ -51,7 +51,7 @@
         sudo apt update
         sudo apt install cmake g++ libusb-1.0-0-dev qtbase5-dev pkgconf system-dev udev -y
 
-  1. Download [IMSProgrammer](https://github.com/xiv3r/Xiaomi-Router-4C-CH341A-flasher/releases/download/V1/imsprog_1.3.1-2_amd64.deb)
+  1. Download [IMSProgrammer](https://github.com/xiv3r/Xiaomi-Router-4C-CH341A-flasher/releases/download/V1/imsprog_1.3.3-2_amd64.deb)
 
   2. type:`cd /home/*/Downloads`
   
