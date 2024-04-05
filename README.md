@@ -39,7 +39,6 @@
 
 ![image](https://github.com/xiv3r/Xiaomi-Router-4C-CH34A-flash-firmware/assets/117867334/466c5aad-61c9-498a-bd1e-c9171fe64c86)
 
-![image](https://github.com/xiv3r/Xiaomi-Router-4C-CH34A-flash-firmware/assets/117867334/dd03fa11-4b8d-47f5-b878-eb790ec73332)
 
 
 # <h1 align="center"> Linux </h1>
