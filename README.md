@@ -2,7 +2,7 @@
 
 - Note: unchecked `verify` from the programmer settings before flashing it
 - Note: `unprotect` eeprom before flashing..
-- Note:(Dangerous and irreversible, set only required options (if you're failed buy a new nor flash memory and replace the old one then solder the new spi nor flash memory unto the board) if you follow correctly, then you can reflash EEPROM flash 10,000-100,000 times. All you have to do if the programmer unable to read eeprom sectors first read the `SREG or Status Register` and `unchecked all `checked area or set all 1 numbers into `0` and `Write Register` then begin flashing 
+- Note:(Dangerous and irreversible moves, set only required options (if may failed buy a new ones and replace the old one and soldered it unto the board) if the programmer unable to read eeprom sectors all you have to do is read the `SREG or Status Register` and `unchecked all `checked area or set all number 1 into `0` and `Write Register` then begin flashing.
 
 
 # <h1 align="center"> Windows </h1>
@@ -44,6 +44,8 @@
 # <h1 align="center"> Linux </h1>
 
 ### Install IMSProg with Graphical Interface
+
+* if the EEPROM unable to read by the programmer go to `Imsprog Settings` -> `CHIP Info` -> `Read Status Register` and replace all number `1` into `0` and `Write` then begin flashing the desired Firmware.
 
   - Dependencies:
 
