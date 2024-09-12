@@ -116,3 +116,7 @@ Extract the driver.zip and open your root terminal then drop the unzip driver fo
 - Flash New Dump firmware:
 
       flashrom -VV -p ch341a_spi -c GD25B128B/GD25Q128B -v -E -w /home/user/Downloads/( your New firmware).bin
+
+# USB MOD
+
+<img src="https://github.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/blob/main/USB-MOD.jpg">
