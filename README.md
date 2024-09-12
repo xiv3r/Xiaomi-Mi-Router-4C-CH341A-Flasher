@@ -1,4 +1,4 @@
-# <h1 align="center">Flashing Xiaomi Router 4C using CH341A USB Programmer</h1>
+# <h1 align="center">CH341A Programmer for Xiaomi Router 4C 16MB Flash Memory</h1>
 
 - Note: unchecked `verify` from the programmer settings before flashing it
 - Note: `unprotect` eeprom before flashing..
@@ -7,7 +7,7 @@
 
 # <h1 align="center"> Windows </h1>
 
-- Download Firmware: | Stock Firmware | Openwrt | X-WRT | Keenetic | PCWRT | ImmortalWRT | Padavan |
+- Available Firmwares: | Stock Firmware | Openwrt | X-WRT | Keenetic | PCWRT | ImmortalWRT | Padavan |
 
      [Full Dump Firmware](https://github.com/xiv3r/Xiaomi-Router-4C-CH341A-flasher/releases/tag/V1)
 
@@ -48,7 +48,7 @@
 * Note: if the EEPROM unable to read by the programmer go to `Imsprog Settings` -> `CHIP Info` -> `Read Status Register` and replace all number `1` into `0` and `Write` then begin flashing the desired Firmware.
 
 
-- Download Firmware: | Stock Firmware | Openwrt | X-WRT | Keenetic | PCWRT | ImmortalWRT | Padavan |
+- Available Firmwares: | Stock Firmware | Openwrt | X-WRT | Keenetic | PCWRT | ImmortalWRT | Padavan |
 
      [Full Dump Firmware](https://github.com/xiv3r/Xiaomi-Router-4C-CH341A-flasher/releases/tag/V1)
   
