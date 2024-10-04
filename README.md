@@ -9,11 +9,9 @@
 
 - Available Firmwares: | Stock Firmware | Openwrt | X-WRT | Keenetic | PCWRT | ImmortalWRT | Padavan |
 
-     [Full Dump Firmware](https://github.com/xiv3r/Xiaomi-Router-4C-CH341A-flasher/releases/tag/V1)
+- [Full Dump Firmware](https://github.com/xiv3r/Xiaomi-Router-4C-CH341A-flasher/releases/tag/V1)
 
-- ASProgrammer 2.0.4:
-
-     [ASProgrammer](https://github.com/xiv3r/Xiaomi-Router-4C-CH341A-flasher/releases/download/V1/AsProgrammer_2.0.4.zip)
+- [ASProgrammer 2.0.4](https://github.com/xiv3r/Xiaomi-Router-4C-CH341A-flasher/releases/download/V1/AsProgrammer_2.0.4.zip)
 
 - Download [CH341PAR.EXE](https://raw.githubusercontent.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/main/CH341PAR.EXE) & [CH341SER.EXE](https://raw.githubusercontent.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/main/CH341SER.EXE) and install
 
@@ -47,48 +45,51 @@
 
 * Extract driver and cd into it then run `sudo make ; sudo make install`
 
-### Install IMSProg with Graphical Interface
+## Install IMSProg:
 
 * Note: if the EEPROM unable to read by the programmer go to `Imsprog Settings` -> `CHIP Info` -> `Read Status Register` and replace all number `1` into `0` and `Write` then begin flashing the desired Firmware.
 
 
 - Available Firmwares: | Stock Firmware | Openwrt | X-WRT | Keenetic | PCWRT | ImmortalWRT | Padavan |
 
-     [Full Dump Firmware](https://github.com/xiv3r/Xiaomi-Router-4C-CH341A-flasher/releases/tag/V1)
+- [Full Dump Firmware](https://github.com/xiv3r/Xiaomi-Router-4C-CH341A-flasher/releases/tag/V1)
   
 
-  - Dependencies:
+- Dependencies:
 
-        sudo apt update
-        sudo apt install imsprog cmake g++ libusb-1.0-0-dev qtbase5-dev pkgconf system-dev udev -y
+      sudo apt update
+      sudo apt install imsprog cmake g++ libusb-1.0-0-dev qtbase5-dev pkgconf system-dev udev -y
 
-  - [IMSProg overview](https://github.com/bigbigmdm/IMSProg)
+- [IMSProg overview](https://github.com/bigbigmdm/IMSProg)
 
-  - Select IMSProg from the Application Menu
-  - 
+- Select IMSProg from the Application Menu
 
  
-### Install Flashrom:
+## Install Flashrom:
 
      sudo apt update
   
      sudo apt install flashrom -y
 
-- unzip the drivers and change directory `cd /home/*/Downloads/CH341PAR` & `cd /home/*Downloads/CH341SER`
+- Unzip the drivers and change directory.
 
-- building the driver `sudo make ; sudo make install`
+      cd CH341PAR
+      cd CH341SER
 
-- Plug your ch341a Programmer on your pc and type `lsusb` and look if your device is detected
+- Building the driver.
+
+      sudo make ; sudo make install
+
+- Plug your ch341a Programmer on your pc and type `lsusb` and look if your device is detected.
 
 
    [CH341A Driver](https://github.com/xiv3r/Xiaomi-Router-4C-CH341A-flasher/files/12224825/driver.zip)
 
+- Dependencies:
 
-- Driver installation (Optional):
-
-   Dependencies: `sudo apt install bc build-essential gcc cmake -y`
+      sudo apt install bc build-essential gcc cmake -y`
   
-Extract the driver.zip and open your root terminal then drop the unzip driver folder to the terminal or manually locate the driver like cd /home/(name)/driver
+- Extract the driver.zip and open your root terminal then drop the unzip driver folder to the terminal or manually locate the driver like cd /home/(name)/driver.
 
 ![Screenshot_20230801_132017](https://github.com/xiv3r/Xiaomi-Router-4C-CH341A-flasher/assets/117867334/fc367842-6724-4f66-80a5-6409bd93190b)
 
