@@ -43,6 +43,9 @@
 
 # <h1 align="center"> Linux </h1>
 
+### Drivers: [CH341PAR_LINUX.zip](https://raw.githubusercontent.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/main/CH341PAR_LINUX.ZIP) & [CH341SER_LINUX.zip](https://raw.githubusercontent.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/main/CH341SER_LINUX.ZIP)
+</h1>
+
 ### Install IMSProg with Graphical Interface
 
 * Note: if the EEPROM unable to read by the programmer go to `Imsprog Settings` -> `CHIP Info` -> `Read Status Register` and replace all number `1` into `0` and `Write` then begin flashing the desired Firmware.
@@ -56,16 +59,9 @@
   - Dependencies:
 
         sudo apt update
-        sudo apt install cmake g++ libusb-1.0-0-dev qtbase5-dev pkgconf system-dev udev -y
+        sudo apt install imsprog cmake g++ libusb-1.0-0-dev qtbase5-dev pkgconf system-dev udev -y
 
-  1. Download [IMSProgrammer](https://github.com/xiv3r/Xiaomi-Router-4C-CH341A-flasher/releases/download/V1/imsprog_1.4.3-4_amd64.deb)
-  2. type:`cd /home/*/Downloads`
-  
-  3. type:`sudo dpkg -i imsprog_1.3.1-2_amd64.deb ; apt --fix-broken install ; dpkg --configure -a`
- 
-  4. run IMSProg from application windows
-
-  5. [IMSprog overview](https://github.com/bigbigmdm/IMSProg)
+  - [IMSProg overview](https://github.com/bigbigmdm/IMSProg)
 
 
  
@@ -74,9 +70,6 @@
      sudo apt update
   
      sudo apt install flashrom -y
-  
-   
-- Download [CH341PAR_LINUX.zip](https://raw.githubusercontent.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/main/CH341PAR_LINUX.ZIP) & [CH341SER_LINUX.zip](https://raw.githubusercontent.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/main/CH341SER_LINUX.ZIP) Drivers (optional)
 
 - unzip the drivers and change directory `cd /home/*/Downloads/CH341PAR` & `cd /home/*Downloads/CH341SER`
 
