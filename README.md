@@ -91,4 +91,21 @@
 
       flashrom -VV -p ch341a_spi -c GD25B128B/GD25Q128B -v -E -w /home/user/Downloads/( your New firmware).bin
 
+# Transition from Openwrt to Keenetic and others without using a programmer
+- import Xiaomi_4C_Router_Breed.bin into `cd /tmp`
+- `opkg update; opkg install kmod-mtd-rw`
+- `insmod mtd-rw.ko i_want_a_brick=1`
+- `mtd -e bootloader -r write /tmp/Xiaomi_4C_Router_Breed.bin bootloader`
+- Go to 192.68.1.1 > `upgrade` > `Programmer` > import `openwrt 16MB dump`
+- unchecked `skip bootloader`
+- unchecked `skip eeprom`
+- Apply Upgrade
+
+# Transition from Keenetic to Openwrt and others without using a programmer
+- hold the reset button for 5 seconds while powering on the router
+- go to `192.168.1.1` > `upgrade` > `programmer` > import `keenetic 16MB dump`
+- unchecked `skip bootloader`
+- unchecked `skip eeprom`
+- Apply Upgrade
+
 # [USB MOD](https://github.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/blob/main/USB-MOD.jpg)
