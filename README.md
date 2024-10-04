@@ -71,32 +71,29 @@
   
      sudo apt install flashrom -y
 
-- Unzip the drivers and change directory.
+- Plug in ch341a Programmer to your pc then type `lsusb` look if your device is detected. if not just install the driver.
 
+- [CH341A Driver](https://github.com/xiv3r/Xiaomi-Router-4C-CH341A-flasher/files/12224825/driver.zip)
+ 
+- Extract the driver.zip in the root terminal
+
+![Screenshot_20230801_132017](https://github.com/xiv3r/Xiaomi-Router-4C-CH341A-flasher/assets/117867334/fc367842-6724-4f66-80a5-6409bd93190b)
+
+- Dependencies:
+
+      sudo apt install bc build-essential gcc cmake -y
+
+- Unzip the drivers into the root terminal.
+
+      sudo -i
+  <br>
+  
       cd CH341PAR
       cd CH341SER
 
 - Building the driver.
 
-      sudo make ; sudo make install
-
-- Plug your ch341a Programmer on your pc and type `lsusb` and look if your device is detected.
-
-
-   [CH341A Driver](https://github.com/xiv3r/Xiaomi-Router-4C-CH341A-flasher/files/12224825/driver.zip)
-
-- Dependencies:
-
-      sudo apt install bc build-essential gcc cmake -y`
-  
-- Extract the driver.zip and open your root terminal then drop the unzip driver folder to the terminal or manually locate the driver like cd /home/(name)/driver.
-
-![Screenshot_20230801_132017](https://github.com/xiv3r/Xiaomi-Router-4C-CH341A-flasher/assets/117867334/fc367842-6724-4f66-80a5-6409bd93190b)
-
-
-- Execute root terminal type:
-
-      sudo make && sudo make install
+      make ; make install
 
 # <h1 align="center"> Flashing with Flashrom </h1>
 
