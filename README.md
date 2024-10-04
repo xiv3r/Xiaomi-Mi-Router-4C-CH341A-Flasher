@@ -41,11 +41,15 @@
 
 # <h1 align="center"> Linux </h1>
 
-### Drivers: [CH341PAR_LINUX.zip](https://raw.githubusercontent.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/main/CH341PAR_LINUX.ZIP) & [CH341SER_LINUX.zip](https://raw.githubusercontent.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/main/CH341SER_LINUX.ZIP)
+### Drivers(optional):[CH341PAR_LINUX.zip](https://raw.githubusercontent.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/main/CH341PAR_LINUX.ZIP) & [CH341SER_LINUX.zip](https://raw.githubusercontent.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/main/CH341SER_LINUX.ZIP)
 
-* Extract driver and cd into it then run `sudo make ; sudo make install`
+- Driver Dependencies:
 
-## Install IMSProg:
+      sudo apt update ; sudo apt install bc build-essential gcc cmake -y
+
+* Extract driver into the root terminal and cd into it then run `make ; make install`
+
+# Install IMSProg:
 
 * Note: if the EEPROM unable to read by the programmer go to `Imsprog Settings` -> `CHIP Info` -> `Read Status Register` and replace all number `1` into `0` and `Write` then begin flashing the desired Firmware.
 
@@ -57,43 +61,20 @@
 
 - Dependencies:
 
-      sudo apt update
-      sudo apt install imsprog cmake g++ libusb-1.0-0-dev qtbase5-dev pkgconf system-dev udev -y
+      sudo apt update ; sudo apt install imsprog -y
 
 - [IMSProg overview](https://github.com/bigbigmdm/IMSProg)
 
 - Select IMSProg from the Application Menu
 
  
-## Install Flashrom:
+# Install Flashrom:
 
-     sudo apt update
-  
-     sudo apt install flashrom -y
+     sudo apt update ; sudo apt install flashrom -y
 
-- Plug in ch341a Programmer to your pc then type `lsusb` look if your device is detected. if not just install the driver.
-
-- [CH341A Driver](https://github.com/xiv3r/Xiaomi-Router-4C-CH341A-flasher/files/12224825/driver.zip)
- 
-- Extract the driver.zip in the root terminal
 
 ![Screenshot_20230801_132017](https://github.com/xiv3r/Xiaomi-Router-4C-CH341A-flasher/assets/117867334/fc367842-6724-4f66-80a5-6409bd93190b)
 
-- Dependencies:
-
-      sudo apt install bc build-essential gcc cmake -y
-
-- Unzip the drivers into the root terminal.
-
-      sudo -i
-  <br>
-  
-      cd CH341PAR
-      cd CH341SER
-
-- Building the driver.
-
-      make ; make install
 
 # <h1 align="center"> Flashing with Flashrom </h1>
 
