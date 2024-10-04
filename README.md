@@ -109,24 +109,30 @@
 - Apply Upgrade
 
 # Transition from Stock to other firmware
-• Reset the router
+
 • Installing Openwrt Invasion
   - `git clone https://github.com/acecilia/OpenWRTInvasion.git`
+
 • Dependencies
-  - `sudo apt update ; sudo apt install python3 python3-pip pip3 telnet -y`
+  - `sudo apt update ; sudo apt install python3 python3-pip pip3 telnet -y` 
+
 • Invading the stock
   - `cd OpenWRTInvasion`
   - `pip3 install -r requirements.txt`
+• `Reset` the Xiaomi 4C Router
   - `python3 remote_command_execution_vulnerability.py`
+
 • Getting root access via Telnet
   -`telnet 192.168.1.1`
   - login:`root`
   - password:`root`
+ 
 • Import the firmware
   - Build a http web file server `python3 -m http.server` (binded pc ip)
   - Go to the browser `192.168.31.123:8000` (locate the 16mb firmware & copy the download link.
   - Import the 16mb firmware into ` cd /tmp` directory.
   - Example:`wget http://192.168.31.123:8000/Downloads/16mb_firmware.bin`
+
 • Flashing the 16mb dump
   - `mtd -e all -r write /tmp/16mb_firmware.bin all`
 
