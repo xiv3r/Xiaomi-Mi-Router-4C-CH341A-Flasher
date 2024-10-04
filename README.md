@@ -1,8 +1,8 @@
-# <h1 align="center">CH341A Programmer for Xiaomi Router 4C 16MB Flash Memory</h1>
+# <h1 align="center">CH341A Programmer for dumping and reflashing Xiaomi Router 4C 16MB EEPROM</h1>
 
 - Note: unchecked `verify` from the programmer settings before flashing it
 - Note: `unprotect` eeprom before flashing..
-- Note:(Dangerous and irreversible moves, set only required options (if may failed buy a new ones and replace the old one and soldered it unto the board) if the programmer unable to read eeprom sectors all you have to do is read the `SREG or Status Register` and `unchecked all `checked area or set all number 1 into `0` and `Write Register` then begin flashing.
+- Note:Dangerous and irreversible actions, set only required options (if may failed buy a new ones and replace the old one then soldered it unto the board) if the programmer unable to read eeprom sectors all you have to do is read the `SREG or Status Register` and `unchecked all `checked area or set all number 1 into `0` and `Write Register` then begin flashing.
 
 
 # <h1 align="center"> Windows </h1>
