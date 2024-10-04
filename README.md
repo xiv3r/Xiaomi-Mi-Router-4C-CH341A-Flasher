@@ -119,11 +119,11 @@
 • Invading the stock
   - `cd OpenWRTInvasion`
   - `pip3 install -r requirements.txt`
-• `Reset` the Xiaomi 4C Router
+• `Reset` the Xiaomi 4C Router and setup with a password of `12345678`
   - `python3 remote_command_execution_vulnerability.py`
 
 • Getting root access via Telnet
-  -`telnet 192.168.1.1`
+  - `telnet 192.168.1.1`
   - login:`root`
   - password:`root`
  
