@@ -123,7 +123,8 @@
   - login:`root`
   - password:`root`
 • Import the firmware
-  - Create a http web file server `python3 -m http.server` (binded to pc dhcp ip) goto the browser `192.168.31.123:8000` (locate the 16mb firmware & copy the download link.
+  - Build a http web file server `python3 -m http.server` (binded pc ip)
+  - Go to the browser `192.168.31.123:8000` (locate the 16mb firmware & copy the download link.
   - Import the 16mb firmware into ` cd /tmp` directory.
   - Example:`wget http://192.168.31.123:8000/Downloads/16mb_firmware.bin`
 • Flashing the 16mb dump
