@@ -92,23 +92,23 @@
       flashrom -VV -p ch341a_spi -c GD25B128B/GD25Q128B -v -E -w /home/user/Downloads/( your New firmware).bin
 
 # Transition from Openwrt to Keenetic and others without using a programmer
-- import Xiaomi_4C_Router_Breed.bin into `cd /tmp`
+- Import the Xiaomi_4C_Router_Breed.bin into `/tmp`
 - `opkg update; opkg install kmod-mtd-rw`
 - `insmod mtd-rw.ko i_want_a_brick=1`
 - `mtd -e bootloader -r write /tmp/Xiaomi_4C_Router_Breed.bin bootloader`
 - Go to 192.68.1.1 > `upgrade` > `Programmer` > import `openwrt 16MB dump`
-- unchecked `skip bootloader`
-- unchecked `skip eeprom`
+- Unchecked `skip bootloader`
+- Unchecked `skip eeprom`
 - Apply Upgrade
 
 # Transition from Keenetic to Openwrt and others without using a programmer
-- hold the reset button for 5 seconds while powering on the router
-- go to `192.168.1.1` > `upgrade` > `programmer` > import `keenetic 16MB dump`
-- unchecked `skip bootloader`
-- unchecked `skip eeprom`
+- Hold the reset button for 5 seconds while powering on the router
+- Go to `192.168.1.1` > `upgrade` > `programmer` > import `keenetic 16MB dump`
+- Unchecked `skip bootloader`
+- Unchecked `skip eeprom`
 - Apply Upgrade
 
-# Transition from Stock to other firmware
+# Transition from Stock to other firmware without using a programmer
 
 • Installing Openwrt Invasion
   - `git clone https://github.com/acecilia/OpenWRTInvasion.git`
