@@ -49,6 +49,8 @@
 
 * Extract driver into the root terminal and cd into it then run `make ; make install`
 
+![Screenshot_20230801_132017](https://github.com/xiv3r/Xiaomi-Router-4C-CH341A-flasher/assets/117867334/fc367842-6724-4f66-80a5-6409bd93190b)
+
 # Install IMSProg:
 
 * Note: if the EEPROM unable to read by the programmer go to `Imsprog Settings` -> `CHIP Info` -> `Read Status Register` and replace all number `1` into `0` and `Write` then begin flashing the desired Firmware.
@@ -71,9 +73,6 @@
 # Install Flashrom:
 
      sudo apt update ; sudo apt install flashrom -y
-
-
-![Screenshot_20230801_132017](https://github.com/xiv3r/Xiaomi-Router-4C-CH341A-flasher/assets/117867334/fc367842-6724-4f66-80a5-6409bd93190b)
 
 
 # <h1 align="center"> Flashing with Flashrom </h1>
