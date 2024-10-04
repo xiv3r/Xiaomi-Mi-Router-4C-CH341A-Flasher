@@ -119,6 +119,7 @@
 • Invading the stock
   - `cd OpenWRTInvasion`
   - `pip3 install -r requirements.txt`
+
 • `Reset` the Xiaomi 4C Router and setup with a password of `12345678`
   - `python3 remote_command_execution_vulnerability.py`
 
