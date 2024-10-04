@@ -44,7 +44,8 @@
 # <h1 align="center"> Linux </h1>
 
 ### Drivers: [CH341PAR_LINUX.zip](https://raw.githubusercontent.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/main/CH341PAR_LINUX.ZIP) & [CH341SER_LINUX.zip](https://raw.githubusercontent.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/main/CH341SER_LINUX.ZIP)
-</h1>
+
+* Extract driver and cd into it then run `sudo make ; sudo make install`
 
 ### Install IMSProg with Graphical Interface
 
@@ -63,6 +64,8 @@
 
   - [IMSProg overview](https://github.com/bigbigmdm/IMSProg)
 
+  - Select IMSProg from the Application Menu
+  - 
 
  
 ### Install Flashrom:
