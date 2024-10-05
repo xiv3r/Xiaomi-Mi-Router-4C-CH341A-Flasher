@@ -140,7 +140,7 @@
 
 # Transition from Padavan to other firmware without using a programmer
 - `telnet 192.168.1.1`
-- import `16mb dump firmware` into padavan `/tmp`
-- `mtd -e all -r write /tmp/16mb_dump_firmware all`
-- 
+- import `16mb dump firmware.bin` into padavan `cd /tmp`
+- `mtd -e all -r write /tmp/16mb_dump_firmware.bin all`
+
 # [USB MOD](https://github.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/blob/main/USB-MOD.jpg)
