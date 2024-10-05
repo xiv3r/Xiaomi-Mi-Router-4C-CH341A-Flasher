@@ -79,7 +79,7 @@
 
 - Note: chip type depends on your EEPROM type detected by flashrom like GD25B128B/'GD25Q128B', GD25Q127C/'GD25Q128C' you may add it to the -c flags before backup or flashing
 
-- To Detect Flash the Chip execute the command below:
+- To Detect the Flash Chip execute the command below:
 
       flashrom -VV -p ch341a_spi -r backup.bin
  
@@ -91,7 +91,8 @@
 
       flashrom -VV -p ch341a_spi -c GD25B128B/GD25Q128B -v -E -w /home/user/Downloads/( your New firmware).bin
 
-# Transition from Openwrt to Keenetic and others without using a programmer
+
+# Transition from Openwrt/Xwrt/Immortalwrt/pcwrt to Keenetic and others without using a programmer
 - Import the [Xiaomi_4C_Router_Breed.bin](https://github.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/blob/main/Xiaomi_4C_Router_Breed_Env_Variables.bin) into `/tmp`
 - `opkg update; opkg install kmod-mtd-rw`
 - `insmod mtd-rw.ko i_want_a_brick=1`
@@ -137,4 +138,9 @@
 • Flashing the 16mb dump
   - `mtd -e all -r write /tmp/16mb_firmware.bin all`
 
+# Transition from Padavan to other firmware without using a programmer
+- `telnet 192.168.1.1`
+- import `16mb dump firmware` into padavan `/tmp`
+- `mtd -e all -r write /tmp/16mb_dump_firmware all`
+- 
 # [USB MOD](https://github.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/blob/main/USB-MOD.jpg)
