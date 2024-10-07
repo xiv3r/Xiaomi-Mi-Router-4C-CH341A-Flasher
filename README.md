@@ -53,7 +53,7 @@
 
 # Install IMSProg:
 
-* Note: if the EEPROM unable to read by the programmer go to `Imsprog Settings` -> `CHIP Info` -> `Read Status Register` and replace all number `1` into `0` and `Write` then begin flashing the desired Firmware.
+* Note: if the EEPROM unable to read by the programmer go to `Imsprog Settings` -> `CHIP Info` -> `Read Status Register` and replace all number `1` into `0` and `Write` then begin flashing the firmware.
 
 
 - Available Firmwares: | Stock Firmware | Openwrt | X-WRT | Keenetic | PCWRT | ImmortalWRT | Padavan |
@@ -89,8 +89,9 @@
 
 - Flash New Dump firmware:
 
-      flashrom -VV -p ch341a_spi -c GD25B128B/GD25Q128B -v -E -w /home/user/Downloads/( your New firmware).bin
+      flashrom -VV -p ch341a_spi -c GD25B128B/GD25Q128B -v -E -w /home/user/Downloads/MIR4C-dump.bin
 
+<h1 align="center"> Termux </h1>
 
 # Transition from Openwrt/Xwrt/Immortalwrt/pcwrt to Keenetic and others without using a programmer
 - Import the [Xiaomi_4C_Router_Breed.bin](https://github.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/blob/main/Xiaomi_4C_Router_Breed_Env_Variables.bin) into `/tmp`
@@ -110,12 +111,12 @@
 - Apply Upgrade
 
 # Transition from Stock to other firmware without using a programmer
+• We're using Termux.apk
+• Dependencies:
+ - `apt update; apt upgrade -y ; apt install git wget python3 python-pip inetutils -y`
 
 • Installing Openwrt Invasion
   - `git clone https://github.com/acecilia/OpenWRTInvasion.git`
-
-• Dependencies
-  - `sudo apt update ; sudo apt install python3 python3-pip pip3 telnet -y` 
 
 • Invading the stock
   - `cd OpenWRTInvasion`
@@ -130,8 +131,8 @@
   - password:`root`
  
 • Import the firmware
-  - Build a http web file server `python3 -m http.server` (binded pc ip)
-  - Go to the browser `192.168.31.123:8000` (locate the 16mb firmware & copy the download link.
+  - Build a http web file server `python3 -m http.server` (bind to pc ip eg. 192.168.31.123:8000).
+  - Go to the browser `192.168.31.123:8000` locate the 16mb firmware & copy the download link.
   - Import the 16mb firmware into ` cd /tmp` directory.
   - Example:`wget http://192.168.31.123:8000/Downloads/16mb_firmware.bin`
 
