@@ -1,4 +1,4 @@
-# <h1 align="center">CH341A Programmer for dumping and reflashing Xiaomi Router 4C 16MB EEPROM</h1>
+# <h1 align="center">CH341A Programmer for dumping, installing, reflashing and recovery of Xiaomi Router 4C</h1>
 
 - Note: unchecked `verify` from the programmer settings before flashing it
 - Note: `unprotect` eeprom before flashing..
@@ -41,7 +41,15 @@
 
 # <h1 align="center"> Linux </h1>
 
-### Drivers(optional):[CH341PAR_LINUX.zip](https://raw.githubusercontent.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/main/CH341PAR_LINUX.ZIP) & [CH341SER_LINUX.zip](https://raw.githubusercontent.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/main/CH341SER_LINUX.ZIP)
+# Drivers (optional): [CH341PAR_LINUX.zip](https://raw.githubusercontent.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/main/CH341PAR_LINUX.ZIP) & [CH341SER_LINUX.zip](https://raw.githubusercontent.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/main/CH341SER_LINUX.ZIP)
+- Check existing drivers
+ 
+      lsusb
+      lsmod | grep ch341
+      Bus 001 Device 002: ID 1a86:5512 QinHeng Electronics HL-340 USB-Serial adapter
+      ch341                  20480  0
+      usbserial             45056  1 ch341
+ 
 
 - Driver Dependencies:
 
