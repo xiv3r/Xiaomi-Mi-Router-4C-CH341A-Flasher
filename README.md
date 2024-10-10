@@ -116,6 +116,7 @@
 
 # Transition from Stock to other firmware without using a programmer
 • We're using Termux.apk
+
 • Dependencies:
  - `apt update; apt upgrade -y ; apt install git wget python3 python-pip inetutils -y`
 
