@@ -107,7 +107,7 @@
 
     pkg update ; pkg upgrade ; apt install python3 python-pip openssh inetutils -y
 
-# Transition from Openwrt/Xwrt/Immortalwrt/pcwrt to Keenetic and others without using a programmer
+# Transition from Openwrt/Xwrt/Immortalwrt/pcwrt to Keenetic and others
 - Import the [Xiaomi_4C_Router_Breed.bin](https://github.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/blob/main/Xiaomi_4C_Router_Breed_Env_Variables.bin) into `/tmp`
 - `opkg update; opkg install kmod-mtd-rw`
 - `insmod mtd-rw.ko i_want_a_brick=1`
@@ -117,14 +117,14 @@
 - Unchecked `skip eeprom`
 - Apply Upgrade
 
-# Transition from Keenetic to Openwrt and others without using a programmer
+# Transition from Keenetic to Openwrt and others
 - Hold the reset button for 5 seconds while powering on the router
 - Go to `192.168.1.1` > `upgrade` > `programmer` > import `openwrt 16MB dump`
 - Unchecked `skip bootloader`
 - Unchecked `skip eeprom`
 - Apply Upgrade
 
-# Transition from Stock to other firmware without using a programmer
+# Transition from Stock to other firmwares
 • We're using Termux.apk
 
 • Dependencies:
@@ -154,7 +154,7 @@
 • Flashing the 16mb dump
   - `mtd -e all -r write /tmp/16mb_firmware.bin all`
 
-# Transition from Padavan to other firmware without using a programmer
+# Transition from Padavan to other firmwares
 - `telnet 192.168.1.1`
 - import `16mb dump firmware.bin` into padavan `cd /tmp`
 - `mtd -e all -r write /tmp/16mb_dump_firmware.bin all`
