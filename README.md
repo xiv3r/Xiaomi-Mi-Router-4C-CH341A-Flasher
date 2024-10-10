@@ -95,7 +95,7 @@
 
 # Dependencies 
 
-    pkg update ; pkg upgrade ; apt install python3 python-pip openssh telnet -y
+    pkg update ; pkg upgrade ; apt install python3 python-pip openssh inetutils -y
 
 # Transition from Openwrt/Xwrt/Immortalwrt/pcwrt to Keenetic and others without using a programmer
 - Import the [Xiaomi_4C_Router_Breed.bin](https://github.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/blob/main/Xiaomi_4C_Router_Breed_Env_Variables.bin) into `/tmp`
