@@ -55,7 +55,7 @@
 
 - Driver Dependencies:
 
-      sudo apt update ; sudo apt install bc build-essential gcc cmake -y
+      sudo apt update ; sudo apt install bc build-essential gcc cmake make linux-headers-$(uname -r) -y
 
 * Extract driver into the root terminal and cd into it then run `make ; make install`
 
