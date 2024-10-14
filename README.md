@@ -43,24 +43,17 @@
 
 # <h1 align="center"> Linux </h1>
 
-# Drivers (optional): [CH341PAR_LINUX.zip](https://raw.githubusercontent.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/main/CH341PAR_LINUX.ZIP) & [CH341SER_LINUX.zip](https://raw.githubusercontent.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/main/CH341SER_LINUX.ZIP)
+# Driver Auto install (optional)
+
+     sudo apt update ; sudo apt install curl ; curl https://raw.githubusercontent.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/refs/heads/main/driver.sh | sudo sh
+
 - Check existing drivers
  
-      lsusb
       lsmod | grep ch341
       Bus 001 Device 002: ID 1a86:5512 QinHeng Electronics HL-340 USB-Serial adapter
       ch341                  20480  0
       usbserial             45056  1 ch341
  
-
-- Driver Dependencies:
-
-      sudo apt update ; sudo apt install bc build-essential gcc cmake make linux-headers-$(uname -r) -y
-
-* Extract driver into the root terminal and cd into it then run
-
-      sudo make ; sudo make load ; sudo make unload ; sudo  make install
-
 ![Screenshot_20230801_132017](https://github.com/xiv3r/Xiaomi-Router-4C-CH341A-flasher/assets/117867334/fc367842-6724-4f66-80a5-6409bd93190b)
 
 # Install IMSProg:
