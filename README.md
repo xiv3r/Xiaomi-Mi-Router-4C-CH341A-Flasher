@@ -57,7 +57,9 @@
 
       sudo apt update ; sudo apt install bc build-essential gcc cmake make linux-headers-$(uname -r) -y
 
-* Extract driver into the root terminal and cd into it then run `make ; make install`
+* Extract driver into the root terminal and cd into it then run
+
+      sudo make ; sudo make load ; sudo make unload ; sudo  make install
 
 ![Screenshot_20230801_132017](https://github.com/xiv3r/Xiaomi-Router-4C-CH341A-flasher/assets/117867334/fc367842-6724-4f66-80a5-6409bd93190b)
 
