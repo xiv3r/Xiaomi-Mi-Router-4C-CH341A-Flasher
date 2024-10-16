@@ -68,7 +68,18 @@
 
 - Dependencies:
 
-      sudo apt update ; sudo apt install imsprog -y
+      sudo apt update && sudo apt install imsprog -y
+
+- Build from Source
+```sh
+git clone https://github.com/bigbigmdm/IMSProg.git && cd IMSProg
+cd IMSProg_programmer
+mkdir build
+cd build
+cmake ..
+make -j`nproc`
+sudo make install
+```
 
 - [IMSProg overview](https://github.com/bigbigmdm/IMSProg)
 
