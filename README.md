@@ -1,8 +1,8 @@
 # <h1 align="center">CH341A Programmer for dumping, installing, reflashing and recovery of Xiaomi Router 4C</h1>
 
 ## Notes:
-- unchecked `verify` from the programmer settings before flashing it
-- `unprotect` eeprom before flashing..
+- Unchecked `Verify` from the programmer settings before flashing it
+- `Unprotect` eeprom before flashing..
 - Dangerous and irreversible actions, set only required options (if may failed buy a new ones and then soldered it unto the board)
 - if the programmer unable to read eeprom sectors all you have to do is read the `SREG or Status Register` and `unchecked all `checked area or set all number `1` into `0` and `Write Register` then begin flashing.
 
@@ -69,6 +69,9 @@
 - Dependencies:
 
       sudo apt update && sudo apt install imsprog -y
+
+      sudo apt install bc build-essential gcc cmake make linux-headers-$(uname -r) cmake g++ libusb-1.0-0-dev qtbase5-dev qttools5-dev pkgconf systemd-dev udev zenity wget -y
+
 
 - Build from Source
 ```sh
