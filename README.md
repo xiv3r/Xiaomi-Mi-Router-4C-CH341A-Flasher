@@ -141,13 +141,13 @@ sudo make install
 - Apply Upgrade
 
 # Transition from Stock to other firmwares
-• We're using Termux.apk
+• Using Termux app
 
 • Dependencies:
  - `apt update; apt upgrade -y ; apt install git wget python3 python-pip inetutils -y`
 
-• Installing Openwrt Invasion
-  - `git clone https://github.com/xiv3r/openwrt-invasion.git`
+• Using my Modified version of openwrt-invasion
+  - `termux-setup-storage && pkg update && pkg upgrade && pkg install curl && curl https://raw.githubusercontent.com/xiv3r/termux-openwrt-invasion/refs/heads/main/openwrt-invasion.sh | sh && cd openwrt-invasion`
 
 • `Reset` the Xiaomi 4C Router and setup with a password of `12345678`
   - `python3 remote_command_execution_vulnerability.py`
@@ -163,7 +163,13 @@ sudo make install
   - Import the 16mb firmware into ` cd /tmp` directory.
   - Example:`wget http://192.168.31.123:8000/Downloads/16mb_firmware.bin`
 
-• Flashing the 16mb dump
+• Terminal 2 (new terminal)
+  - `cd ~/sdcard/download $$ python3 -m http.server -b localhost`
+ 
+• Terminal 1
+- `wget -O 16mb_firmware.bin http://localhost:8000/Download/16mb_firmware.bin`
+
+• Flashing the 16mb dump firmware 
   - `mtd -e ALL -r write /tmp/16mb_firmware.bin ALL`
 
 # Transition from Padavan to other firmwares
