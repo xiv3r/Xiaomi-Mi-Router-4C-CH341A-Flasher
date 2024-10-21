@@ -122,18 +122,20 @@ sudo make install
     pkg update ; pkg upgrade ; apt install python3 python-pip openssh inetutils -y
 
 # Transition from Openwrt/Xwrt/Immortalwrt/pcwrt to Keenetic and others
-- Import the [Xiaomi_4C_Router_Breed.bin](https://github.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/blob/main/Xiaomi_4C_Router_Breed_Env_Variables.bin) into `/tmp`
+- Import the [Xiaomi_4C_Router_Breed.bin](https://github.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/blob/main/Xiaomi_4C_Router_Breed_Env_Variables.bin)
+- `cd /tmp`
+- `wget -O breed.bin https://github.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/blob/main/Xiaomi_4C_Router_Breed_Env_Variables.bin`
 - `opkg update; opkg install kmod-mtd-rw`
 - `insmod mtd-rw.ko i_want_a_brick=1`
-- `mtd -e bootloader -r write /tmp/Xiaomi_4C_Router_Breed.bin bootloader`
-- Go to 192.68.1.1 > `upgrade` > `Programmer` > import `keenetic 16MB dump`
+- `mtd -e bootloader -r write /tmp/breed.bin bootloader`
+- Goto 👉 [192.68.1.1](http://192.168.1.1) > `upgrade` > `Programmer Mode` > import `keenetic 16MB dump` from download 
 - Unchecked `skip bootloader`
 - Unchecked `skip eeprom`
 - Apply Upgrade
 
 # Transition from Keenetic to Openwrt and others
 - Hold the reset button for 5 seconds while powering on the router
-- Go to `192.168.1.1` > `upgrade` > `programmer` > import `openwrt 16MB dump`
+- Goto 👉[192.168.1.1](http://192.168.1.1) > `upgrade` > `programmer mode` > import `openwrt 16MB dump` from download
 - Unchecked `skip bootloader`
 - Unchecked `skip eeprom`
 - Apply Upgrade
@@ -145,11 +147,7 @@ sudo make install
  - `apt update; apt upgrade -y ; apt install git wget python3 python-pip inetutils -y`
 
 • Installing Openwrt Invasion
-  - `git clone https://github.com/acecilia/OpenWRTInvasion.git`
-
-• Invading the stock
-  - `cd OpenWRTInvasion`
-  - `pip3 install -r requirements.txt`
+  - `git clone https://github.com/xiv3r/openwrt-invasion.git`
 
 • `Reset` the Xiaomi 4C Router and setup with a password of `12345678`
   - `python3 remote_command_execution_vulnerability.py`
@@ -166,11 +164,11 @@ sudo make install
   - Example:`wget http://192.168.31.123:8000/Downloads/16mb_firmware.bin`
 
 • Flashing the 16mb dump
-  - `mtd -e all -r write /tmp/16mb_firmware.bin all`
+  - `mtd -e ALL -r write /tmp/16mb_firmware.bin ALL`
 
 # Transition from Padavan to other firmwares
 - `telnet 192.168.1.1`
 - import `16mb dump firmware.bin` into padavan `cd /tmp`
-- `mtd -e all -r write /tmp/16mb_dump_firmware.bin all`
+- `mtd -e ALL -r write /tmp/16mb_dump_firmware.bin ALL`
 
 # [USB MOD](https://github.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/blob/main/USB-MOD.jpg)
