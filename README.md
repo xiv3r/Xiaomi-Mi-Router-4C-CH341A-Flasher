@@ -134,14 +134,14 @@ sudo make install
 - Goto 👉 [192.68.1.1](http://192.168.1.1) > `upgrade` > `Programmer Mode` > import `keenetic 16MB dump` from download 
 - Unchecked `skip bootloader`
 - Unchecked `skip eeprom`
-- Apply Upgrade
+- Upload
 
 # Transition from Keenetic to Openwrt and others
 - Hold the reset button for 5 seconds while powering on the router
 - Goto 👉[192.168.1.1](http://192.168.1.1) > `upgrade` > `programmer mode` > import `openwrt 16MB dump` from download
 - Unchecked `skip bootloader`
 - Unchecked `skip eeprom`
-- Apply Upgrade
+- Upload
 
 # Transition from Stock to other firmwares
 • Using Termux app
