@@ -123,6 +123,9 @@ sudo make install
 
 # Transition from Openwrt/Xwrt/Immortalwrt/pcwrt to Keenetic and others
 - Import the [Xiaomi_4C_Router_Breed.bin](https://github.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/blob/main/Xiaomi_4C_Router_Breed_Env_Variables.bin)
+- `telnet 192.168.1.1`
+  - user:`root`
+  - pass:`your admin password`
 - `cd /tmp`
 - `wget -O breed.bin https://github.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/blob/main/Xiaomi_4C_Router_Breed_Env_Variables.bin`
 - `opkg update; opkg install kmod-mtd-rw`
