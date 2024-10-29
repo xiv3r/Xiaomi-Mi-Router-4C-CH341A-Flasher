@@ -66,7 +66,7 @@
 - [Full Dump Firmware](https://github.com/xiv3r/Xiaomi-Router-4C-CH341A-flasher/releases/tag/V1)
   
 
-- Download from Main
+- Download and install IMSProg
 
       sudo apt update && sudo apt install imsprog -y
 
@@ -74,11 +74,11 @@
 
       sudo apt install bc build-essential gcc cmake make linux-headers-$(uname -r) cmake g++ libusb-1.0-0-dev qtbase5-dev qttools5-dev pkgconf systemd-dev udev zenity wget -y
 
-- Install from Repo
+- Install from Repo (optional)
 
       wget https://launchpad.net/~bigmdm/+archive/ubuntu/imsprog/+files/imsprog_1.4.4-4_amd64.deb -O imsprog.deb && sudo dpkg -i imsprog.deb && sudo apt --fix-broken install -y && sudo dpkg --configure -a
 
-- Build from Source
+- Build from Source (optional)
 ```sh
 git clone https://github.com/bigbigmdm/IMSProg.git && cd IMSProg
 cd IMSProg_programmer
