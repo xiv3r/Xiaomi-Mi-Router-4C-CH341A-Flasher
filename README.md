@@ -156,7 +156,7 @@ sudo make install
   - `python3 remote_command_execution_vulnerability.py`
 
 • Getting root access via Telnet
-  - `telnet 192.168.1.1`
+  - `telnet 192.168.31.1`
   - login:`root`
   - password:`root`
  
