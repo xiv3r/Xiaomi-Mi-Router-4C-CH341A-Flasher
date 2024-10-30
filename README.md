@@ -161,17 +161,18 @@ sudo make install
   - password:`root`
  
 • Import the firmware
-  - Build a http web file server `python3 -m http.server` (bind to pc ip eg. 192.168.31.123:8000).
-  - Go to the browser `192.168.31.123:8000` locate the 16mb firmware & copy the download link.
-  - Import the 16mb firmware into ` cd /tmp` directory.
-  - Example:`wget http://192.168.31.123:8000/Downloads/16mb_firmware.bin`
+  - Build a http web file server `python3 -m http.server` (bind to [http://localhost:8000](http://localhost:8000)).
+  - Go to the browser `localhost:8000` locate the 16mb firmware & copy the download link.
+  - Import the 16mb firmware into `cd /tmp` directory.
+  - Example:`wget http://localhost:8000/16mb_firmware.bin`
+
+• Terminal 2 Build file server (swipe left and tap + -> new terminal)
+  - `cd /sdcard/Download $$ python3 -m http.server -b localhost`
 
 • Terminal Main
-- `wget -O 16mb_firmware.bin http://localhost:8000/Download/16mb_firmware.bin`
+- `cd /tmp`
+- `wget -O 16mb_firmware.bin http://localhost:8000/16mb_firmware.bin`
 
-• Terminal 2 (swipe left and tap + -> new terminal)
-  - `cd /sdcard/Download $$ python3 -m http.server -b localhost`
- 
 • Flashing the 16mb dump firmware 
   - `mtd -e ALL -r write /tmp/16mb_firmware.bin ALL`
 
