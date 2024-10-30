@@ -166,18 +166,18 @@ sudo make install
   - Import the 16mb firmware into ` cd /tmp` directory.
   - Example:`wget http://192.168.31.123:8000/Downloads/16mb_firmware.bin`
 
-• Terminal 2 (new terminal)
-  - `cd ~/sdcard/download $$ python3 -m http.server -b localhost`
- 
-• Terminal 1
+• Terminal Main
 - `wget -O 16mb_firmware.bin http://localhost:8000/Download/16mb_firmware.bin`
 
+• Terminal 2 (swipe left and tap + -> new terminal)
+  - `cd /sdcard/Download $$ python3 -m http.server -b localhost`
+ 
 • Flashing the 16mb dump firmware 
   - `mtd -e ALL -r write /tmp/16mb_firmware.bin ALL`
 
 # Transition from Padavan to other firmwares
-- `telnet 192.168.1.1`
-- import `16mb dump firmware.bin` into padavan `cd /tmp`
+- `telnet 192.168.1.1` and login your credentials
+- Import `16mb dump firmware.bin` into padavan `cd /tmp`
 - `mtd -e ALL -r write /tmp/16mb_dump_firmware.bin ALL`
 
 # [USB MOD](https://github.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/blob/main/USB-MOD.jpg)
