@@ -144,26 +144,16 @@ python3 remote_command_execution_vulnerability.py
 ```
   - login:`root`
   - password:`root`
- 
-• Import the firmware
-  - Build a http web file server `python3 -m http.server` (bind to [http://localhost:8000](http://localhost:8000)).
-  - Go to the browser `localhost:8000` locate the 16mb firmware & copy the download link.
-  - Import the 16mb firmware into `cd /tmp` directory.
-  - Example:`wget http://localhost:8000/16mb_firmware.bin`
 
-• Terminal 2 Build file server (swipe left and tap + -> new terminal)
+- Download the firmware from [Here!](https://github.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/releases/download/V1/)
+   - e.g
 ```sh
-cd /sdcard/Download $$ python3 -m http.server -b localhost
-```
-
-• Terminal Main
-```sh
-cd /tmp && wget -O 16mb_firmware.bin http://localhost:8000/16mb_firmware.bin
+cd /tmp && wget -O Keenetic.bin https://github.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/releases/download/V1/Full-KeeneticOS_4.1.7_MOD.bin
 ```
 
 • Flashing the 16mb dump firmware 
 ```sh
-mtd -e ALL -r write /tmp/16mb_firmware.bin ALL
+mtd -e ALL -r write /tmp/keenetic.bin ALL
 ```
 
 # Transition from Openwrt/Xwrt/Immortalwrt/pcwrt to Keenetic and others
