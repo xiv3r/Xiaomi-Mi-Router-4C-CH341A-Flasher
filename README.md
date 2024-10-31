@@ -40,6 +40,7 @@
 ![image](https://github.com/xiv3r/Xiaomi-Router-4C-CH34A-flash-firmware/assets/117867334/466c5aad-61c9-498a-bd1e-c9171fe64c86)
 
 
+<br><br></br>
 
 # <h1 align="center"> Linux </h1>
 
@@ -56,6 +57,8 @@ usbserial             45056  1 ch341
 ```
 ![Screenshot_20230801_132017](https://github.com/xiv3r/Xiaomi-Router-4C-CH341A-flasher/assets/117867334/fc367842-6724-4f66-80a5-6409bd93190b)
 
+<br><br></br>
+
 # Install IMSProg:
 
 * Note: if the EEPROM unable to read by the programmer go to `Imsprog Settings` -> `CHIP Info` -> `Read Status Register` and replace all number `1` into `0` and `Write` then begin flashing the firmware.
@@ -64,7 +67,7 @@ usbserial             45056  1 ch341
 - Available Firmwares: | Stock Firmware | Openwrt | X-WRT | Keenetic | PCWRT | ImmortalWRT | Padavan |
 
 - [Full Dump Firmware](https://github.com/xiv3r/Xiaomi-Router-4C-CH341A-flasher/releases/tag/V1)
-  
+ 
 
 - Download and install IMSProg
 ```sh
@@ -88,11 +91,14 @@ cmake ..
 make -j`nproc`
 sudo make install
 ```
-
 - [IMSProg overview](https://github.com/bigbigmdm/IMSProg)
 
 - Select IMSProg from the Application Menu
- 
+
+<br>
+<br>
+</br>
+
 # Install Flashrom:
 ```sh
 sudo apt update ; sudo apt install flashrom -y
@@ -114,6 +120,9 @@ flashrom -VV -p ch341a_spi -c GD25B128B/GD25Q128B -r MIR4C-dump.bin
 ```sh
 flashrom -VV -p ch341a_spi -c GD25B128B/GD25Q128B -v -E -w /home/user/Downloads/MIR4C-dump.bin
 ```
+
+<br><br></br>
+
 <h1 align="center"> Termux </h1>
 
 # Requirements
@@ -129,8 +138,10 @@ apt update && apt upgrade -y && apt install git wget python3 python-pip inetutil
 # Notes
 - To check mtd partitions `cat /proc/mtd`
 - If mtd `ALL` partition is found yo can flash it easily but if not found otherwise flash the eeprom with CH341a programmer
+- MTD `ALL` Partition can flash all 16MB dump firmware from the download section
+- Keenetic Breed `Programmer Firmware` can Flash all 16MB dump firmware from the download section
 - All 16MB firmware dump are stable for transitioning
-- You can use wget, scp, http fileserver to import firmware into `/tmp` directory 
+- You can use wget, scp, http fileserver to import firmware into `/tmp` directory and flash
  
 # Transition from Stock to other firmwares
 • Using my Modified version of openwrt-invasion
@@ -167,8 +178,8 @@ mtd -e ALL -r write /tmp/keenetic.bin ALL
 ```sh
 telnet 192.168.1.1`
 ```
-  - user:`root`
-  - pass:`your admin password`
+   - user:`root`
+   - pass:`your admin password`
 - Breed bootloader installation
 ```sh 
 opkg update && opkg install kmod-mtd-rw && insmod mtd-rw i_want_a_brick=1
