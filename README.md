@@ -117,14 +117,21 @@ flashrom -VV -p ch341a_spi -c GD25B128B/GD25Q128B -v -E -w /home/user/Downloads/
 <h1 align="center"> Termux </h1>
 
 # Requirements
-- Access Point Router/CPE (Wired Bridge)
+- Access Point Router/CPE (Wired Bridge) (required) if `ALL` exit in the MTD partition tables
+- CH341A Programmer (optional) if there's no `ALL` existed in the MTD partition tables
 - Termux
 
 • Dependencies:
 ```sh
 apt update && apt upgrade -y && apt install git wget python3 python-pip inetutils -y
 ```
-    
+
+# Notes
+- To check mtd partitions `cat /proc/mtd`
+- If mtd `ALL` partition is found yo can flash it easily but if not found otherwise flash the eeprom with CH341a programmer
+- All 16MB firmware dump are stable for transitioning
+- You can use wget, scp, http fileserver to import firmware into `/tmp` directory 
+ 
 # Transition from Stock to other firmwares
 • Using my Modified version of openwrt-invasion
 ```sh
@@ -192,7 +199,7 @@ mtd -e bootloader -r write /tmp/breed.bin bootloader
 # Transition from Padavan to other firmwares
 - `telnet 192.168.1.1` and login your credentials
 - Import `16mb dump firmware.bin` to `/tmp`
-    - e.g ` cd /tmp && wget -O keenetic.bin https://github.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/releases/download/V1/Full-KeeneticOS_4.1.7_MOD.bin`
+- e.g ` cd /tmp && wget -O keenetic.bin https://github.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/releases/download/V1/Full-KeeneticOS_4.1.7_MOD.bin`
 ```sh
 mtd -e ALL -r write /tmp/keenetic.bin ALL
 ```
