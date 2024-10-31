@@ -95,68 +95,53 @@ sudo make install
 
  
 # Install Flashrom:
-
+```sh
      sudo apt update ; sudo apt install flashrom -y
-
+```
 
 # <h1 align="center"> Flashing with Flashrom </h1>
 
 - Note: chip type depends on your EEPROM type detected by flashrom like GD25B128B/'GD25Q128B', GD25Q127C/'GD25Q128C' you may add it to the -c flags before backup or flashing
 
 - To Detect the Flash Chip execute the command below:
-
+```sh
       flashrom -VV -p ch341a_spi -r backup.bin
- 
+ ```
 - Backup Dump firmware: 
-
+```sh
       flashrom -VV -p ch341a_spi -c GD25B128B/GD25Q128B -r MIR4C-dump.bin
-
+```
 - Flash New Dump firmware:
-
+```sh
       flashrom -VV -p ch341a_spi -c GD25B128B/GD25Q128B -v -E -w /home/user/Downloads/MIR4C-dump.bin
-
+```
 <h1 align="center"> Termux </h1>
 
-# Dependencies 
-
-    pkg update ; pkg upgrade ; apt install python3 python-pip openssh inetutils -y
-
-# Transition from Openwrt/Xwrt/Immortalwrt/pcwrt to Keenetic and others
-- Import the [Xiaomi_4C_Router_Breed.bin](https://github.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/blob/main/Xiaomi_4C_Router_Breed_Env_Variables.bin)
-- `telnet 192.168.1.1`
-  - user:`root`
-  - pass:`your admin password`
-- `cd /tmp`
-- `wget -O breed.bin https://github.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/blob/main/Xiaomi_4C_Router_Breed_Env_Variables.bin`
-- `opkg update; opkg install kmod-mtd-rw`
-- `insmod mtd-rw.ko i_want_a_brick=1`
-- `mtd -e bootloader -r write /tmp/breed.bin bootloader`
-- Goto 👉 [192.68.1.1](http://192.168.1.1) > `upgrade` > `Programmer Mode` > import `keenetic 16MB dump` from download 
-- Unchecked `skip bootloader`
-- Unchecked `skip eeprom`
-- Upload
-
-# Transition from Keenetic to Openwrt and others
-- Hold the reset button for 5 seconds while powering on the router
-- Goto 👉[192.168.1.1](http://192.168.1.1) > `upgrade` > `programmer mode` > import `openwrt 16MB dump` from download
-- Unchecked `skip bootloader`
-- Unchecked `skip eeprom`
-- Upload
-
-# Transition from Stock to other firmwares
-• Using Termux app
+# Requirements
+- Access Point Router/CPE (Wired Bridge)
+- Termux
 
 • Dependencies:
- - `apt update; apt upgrade -y ; apt install git wget python3 python-pip inetutils -y`
-
+ ```sh
+ apt update; apt upgrade -y ; apt install git wget python3 python-pip inetutils -y
+```
+    
+# Transition from Stock to other firmwares
 • Using my Modified version of openwrt-invasion
-  - `termux-setup-storage && pkg update && pkg upgrade && pkg install curl && curl https://raw.githubusercontent.com/xiv3r/termux-openwrt-invasion/refs/heads/main/openwrt-invasion.sh | sh && cd openwrt-invasion`
+```sh
+termux-setup-storage && pkg update && pkg upgrade && pkg install curl && curl https://raw.githubusercontent.com/xiv3r/termux-openwrt-invasion/refs/heads/main/openwrt-invasion.sh | sh && cd openwrt-invasion
+```
 
 • `Reset` the Xiaomi 4C Router and setup with a password of `12345678`
-  - `python3 remote_command_execution_vulnerability.py`
+```sh
+python3 remote_command_execution_vulnerability.py
+```
+
 
 • Getting root access via Telnet
-  - `telnet 192.168.31.1`
+```sh
+ telnet 192.168.31.1
+```
   - login:`root`
   - password:`root`
  
@@ -167,18 +152,58 @@ sudo make install
   - Example:`wget http://localhost:8000/16mb_firmware.bin`
 
 • Terminal 2 Build file server (swipe left and tap + -> new terminal)
-  - `cd /sdcard/Download $$ python3 -m http.server -b localhost`
+```sh
+cd /sdcard/Download $$ python3 -m http.server -b localhost
+```
 
 • Terminal Main
-- `cd /tmp`
-- `wget -O 16mb_firmware.bin http://localhost:8000/16mb_firmware.bin`
+```sh
+cd /tmp && wget -O 16mb_firmware.bin http://localhost:8000/16mb_firmware.bin
+```
 
 • Flashing the 16mb dump firmware 
-  - `mtd -e ALL -r write /tmp/16mb_firmware.bin ALL`
+```sh
+mtd -e ALL -r write /tmp/16mb_firmware.bin ALL
+```
+
+# Transition from Openwrt/Xwrt/Immortalwrt/pcwrt to Keenetic and others
+- Import the [Xiaomi_4C_Router_Breed.bin](https://github.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/blob/main/Xiaomi_4C_Router_Breed_Env_Variables.bin)
+```sh
+telnet 192.168.1.1`
+```
+  - user:`root`
+  - pass:`your admin password`
+```sh
+cd /tmp && wget -O breed.bin https://github.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/blob/main/Xiaomi_4C_Router_Breed_Env_Variables.bin
+```
+```sh 
+opkg update && opkg install kmod-mtd-rw && insmod mtd-rw i_want_a_brick=1
+```
+```sh
+mtd -e bootloader -r write /tmp/breed.bin bootloader
+```
+- router will reboot
+- Goto 👉 [192.68.1.1](http://192.168.1.1) > `upgrade` > `Programmer firmware` > import `keenetic 16MB dump` from download 
+<img src="https://github.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/blob/main/src/backup.jpg">
+
+- Unchecked `skip bootloader`
+- Unchecked `skip eeprom`
+- Upload
+
+# Transition from Keenetic to Openwrt and others
+- Hold the reset button for 5 seconds while powering on the router
+- Goto 👉[192.168.1.1](http://192.168.1.1) > `upgrade` > `programmer firmware` > import `openwrt 16MB dump` from download
+<img src="https://github.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/blob/main/src/backup.jpg">
+
+- Unchecked `skip bootloader`
+- Unchecked `skip eeprom`
+- Upload
 
 # Transition from Padavan to other firmwares
 - `telnet 192.168.1.1` and login your credentials
-- Import `16mb dump firmware.bin` into padavan `cd /tmp`
-- `mtd -e ALL -r write /tmp/16mb_dump_firmware.bin ALL`
+- Import `16mb dump firmware.bin` to `/tmp`
+```sh
+cd /tmp && mtd -e ALL -r write /tmp/16mb_dump_firmware.bin ALL
+```
 
 # [USB MOD](https://github.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/blob/main/USB-MOD.jpg)
