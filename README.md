@@ -44,16 +44,16 @@
 # <h1 align="center"> Linux </h1>
 
 # Driver Auto install (optional)
-
-     sudo apt update ; sudo apt install curl ; curl https://raw.githubusercontent.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/refs/heads/main/driver.sh | sudo sh
-
+```sh
+sudo apt update ; sudo apt install curl ; curl https://raw.githubusercontent.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/refs/heads/main/driver.sh | sudo sh
+```
 - Check existing drivers
- 
-      lsmod | grep ch341
-      Bus 001 Device 002: ID 1a86:5512 QinHeng Electronics HL-340 USB-Serial adapter
-      ch341                  20480  0
-      usbserial             45056  1 ch341
- 
+```sh
+lsmod | grep ch341
+Bus 001 Device 002: ID 1a86:5512 QinHeng Electronics HL-340 USB-Serial adapter
+ch341                  20480  0
+usbserial             45056  1 ch341
+```
 ![Screenshot_20230801_132017](https://github.com/xiv3r/Xiaomi-Router-4C-CH341A-flasher/assets/117867334/fc367842-6724-4f66-80a5-6409bd93190b)
 
 # Install IMSProg:
@@ -67,17 +67,17 @@
   
 
 - Download and install IMSProg
-
-      sudo apt update && sudo apt install imsprog -y
-
+```sh
+sudo apt update && sudo apt install imsprog -y
+```
 - Dependencies
-
-      sudo apt install bc build-essential gcc cmake make linux-headers-$(uname -r) cmake g++ libusb-1.0-0-dev qtbase5-dev qttools5-dev pkgconf systemd-dev udev zenity wget -y
-
+```sh
+sudo apt install bc build-essential gcc cmake make linux-headers-$(uname -r) cmake g++ libusb-1.0-0-dev qtbase5-dev qttools5-dev pkgconf systemd-dev udev zenity wget -y
+```
 - Install from Repo (optional)
-
-      wget https://launchpad.net/~bigmdm/+archive/ubuntu/imsprog/+files/imsprog_1.4.4-4_amd64.deb -O imsprog.deb && sudo dpkg -i imsprog.deb && sudo apt --fix-broken install -y && sudo dpkg --configure -a
-
+```sh
+wget https://launchpad.net/~bigmdm/+archive/ubuntu/imsprog/+files/imsprog_1.4.4-4_amd64.deb -O imsprog.deb && sudo dpkg -i imsprog.deb && sudo apt --fix-broken install -y && sudo dpkg --configure -a
+```
 - Build from Source (optional)
 ```sh
 git clone https://github.com/bigbigmdm/IMSProg.git && cd IMSProg
@@ -92,11 +92,10 @@ sudo make install
 - [IMSProg overview](https://github.com/bigbigmdm/IMSProg)
 
 - Select IMSProg from the Application Menu
-
  
 # Install Flashrom:
 ```sh
-     sudo apt update ; sudo apt install flashrom -y
+sudo apt update ; sudo apt install flashrom -y
 ```
 
 # <h1 align="center"> Flashing with Flashrom </h1>
@@ -105,15 +104,15 @@ sudo make install
 
 - To Detect the Flash Chip execute the command below:
 ```sh
-      flashrom -VV -p ch341a_spi -r backup.bin
- ```
+flashrom -VV -p ch341a_spi -r backup.bin
+```
 - Backup Dump firmware: 
 ```sh
-      flashrom -VV -p ch341a_spi -c GD25B128B/GD25Q128B -r MIR4C-dump.bin
+flashrom -VV -p ch341a_spi -c GD25B128B/GD25Q128B -r MIR4C-dump.bin
 ```
 - Flash New Dump firmware:
 ```sh
-      flashrom -VV -p ch341a_spi -c GD25B128B/GD25Q128B -v -E -w /home/user/Downloads/MIR4C-dump.bin
+flashrom -VV -p ch341a_spi -c GD25B128B/GD25Q128B -v -E -w /home/user/Downloads/MIR4C-dump.bin
 ```
 <h1 align="center"> Termux </h1>
 
@@ -122,8 +121,8 @@ sudo make install
 - Termux
 
 • Dependencies:
- ```sh
- apt update; apt upgrade -y ; apt install git wget python3 python-pip inetutils -y
+```sh
+apt update && apt upgrade -y && apt install git wget python3 python-pip inetutils -y
 ```
     
 # Transition from Stock to other firmwares
@@ -132,11 +131,10 @@ sudo make install
 termux-setup-storage && pkg update && pkg upgrade && pkg install curl && curl https://raw.githubusercontent.com/xiv3r/termux-openwrt-invasion/refs/heads/main/openwrt-invasion.sh | sh && cd openwrt-invasion
 ```
 
-• `Reset` the Xiaomi 4C Router and setup with a password of `12345678`
+• `Reset` the Xiaomi 4C Router and configure with a password of `12345678`
 ```sh
 python3 remote_command_execution_vulnerability.py
 ```
-
 
 • Getting root access via Telnet
 ```sh
@@ -150,7 +148,6 @@ python3 remote_command_execution_vulnerability.py
 ```sh
 cd /tmp && wget -O Keenetic.bin https://github.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/releases/download/V1/Full-KeeneticOS_4.1.7_MOD.bin
 ```
-
 • Flashing the 16mb dump firmware 
 ```sh
 mtd -e ALL -r write /tmp/keenetic.bin ALL
@@ -172,7 +169,7 @@ opkg update && opkg install kmod-mtd-rw && insmod mtd-rw i_want_a_brick=1
 ```sh
 mtd -e bootloader -r write /tmp/breed.bin bootloader
 ```
-- router will reboot
+- Router will reboot
 - Goto 👉 [192.68.1.1](http://192.168.1.1) > `upgrade` > `Programmer firmware` > import `keenetic 16MB dump` from download 
 <img src="https://github.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/blob/main/src/backup.jpg">
 
@@ -192,8 +189,9 @@ mtd -e bootloader -r write /tmp/breed.bin bootloader
 # Transition from Padavan to other firmwares
 - `telnet 192.168.1.1` and login your credentials
 - Import `16mb dump firmware.bin` to `/tmp`
+    - e.g ` cd /tmp && wget -O keenetic.bin https://github.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/releases/download/V1/Full-KeeneticOS_4.1.7_MOD.bin`
 ```sh
-cd /tmp && mtd -e ALL -r write /tmp/16mb_dump_firmware.bin ALL
+mtd -e ALL -r write /tmp/keenetic.bin ALL
 ```
 
 # [USB MOD](https://github.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/blob/main/USB-MOD.jpg)
