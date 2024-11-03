@@ -142,7 +142,12 @@ apt update && apt upgrade -y && apt install git wget python3 python-pip inetutil
 - Keenetic Breed `Programmer Firmware` can Flash all 16MB dump firmware from the download section
 - All 16MB firmware dump are stable for transitioning
 - You can use wget, scp, http fileserver to import firmware into `/tmp` directory and flash
- 
+ > Mode of firmware import
+  - `cd Download && scp 16mb_firmware.bin root@192.168.1.1:/tmp`
+  - `cd Download && python3 -m http.server` (dhcp ip assign):8000 e.g: `wget 192.168.1.111:8000/16mb_firmware.bin`
+  - `cd /tmp && wget https://github.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/releases/download/V1/Full-KeeneticOS_4.1.7_MOD.bin`
+ > Flashing
+  - `mtd -e ALL -r write /tmp/16mb_firmware.bin ALL`
 # Transition from Stock to other firmwares
 • Using my Modified version of openwrt-invasion
 ```sh
