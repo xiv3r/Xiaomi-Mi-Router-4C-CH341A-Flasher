@@ -1,10 +1,11 @@
 # <h1 align="center">CH341A Programmer for dumping, installing, reflashing and recovery of Xiaomi Router 4C</h1>
 
-## Notes:
-- Unchecked `Verify` from the programmer settings before flashing it
-- `Unprotect` eeprom before flashing..
-- Dangerous and irreversible actions, set only required options (if may failed buy a new ones and then soldered it unto the board)
-- if the programmer unable to read eeprom sectors all you have to do is read the `SREG or Status Register` and `unchecked all `checked area or set all number `1` into `0` and `Write Register` then begin flashing.
+## Notes
+> [!Note]
+> Unchecked `Verify` from the programmer settings before flashing it
+> `Unprotect` eeprom before flashing..
+> Dangerous and irreversible actions, set only required options (if may failed buy a new ones and then soldered it unto the board)
+> if the programmer fail to read the eeprom sectors all you have to do is read the `SREG or Status Register` and `unchecked all `checked area or set all number `1` into `0` and then `Write Register`.
 
 
 # <h1 align="center"> Windows </h1>
@@ -17,7 +18,7 @@
 
 - Download [CH341PAR.EXE](https://raw.githubusercontent.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/main/CH341PAR.EXE) & [CH341SER.EXE](https://raw.githubusercontent.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/main/CH341SER.EXE) and install
 
-> [!Tips]
+### Setup
 > connect the ch341a clip to Xiaomi 4c router EEPROM, open asprogrammer then `detect` the chip select the specific router IC model, click `read` the IC and make a backup then proceed to erase ic, load the 16mb firmware into it (stock, openwrt, padavan, keenetic, immortal) then click `write` IC click yes and wait after it finish finally connect your router to your pc and open 192.168.1.1(3rd party) or 192.168.31.1(stock)
 
 
@@ -137,7 +138,7 @@ apt update && apt upgrade -y && apt install git wget python3 python-pip inetutil
 ```
 
 # Notes
-< [!Note]
+> [!Note]
 > To check mtd partitions `cat /proc/mtd`
 > If mtd `ALL` partition is found yo can flash it easily but if not found otherwise flash the eeprom with CH341a programmer
 > MTD `ALL` Partition can flash all 16MB dump firmware from the download section
