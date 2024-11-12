@@ -21,7 +21,7 @@ sudo make unload
 ###
 sudo make install 
 ###
-&& cd
+cd
 ###
 mkdir -p ch341a-par && cd ch341a-par
 ###
