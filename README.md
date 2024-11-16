@@ -206,6 +206,10 @@ mtd -e bootloader -r write /tmp/breed.bin bootloader
 - Unchecked `skip eeprom`
 - Upload
 
+`OpenWRT WiFi tx power mod to 30dBm`
+```sh
+wget -qO- https://raw.githubusercontent.com/xiv3r/20dBm-30dBm-Xiaomi-Mi-4C-Router-Mod/refs/heads/main/mtd2-mod.sh | sh
+```
 # Transition from Keenetic to Openwrt and others
 - Hold the reset button for 5 seconds while powering on the router
 - Goto 👉[192.168.1.1](http://192.168.1.1) > `upgrade` > `programmer firmware` > import `openwrt 16MB dump` from download
@@ -214,11 +218,7 @@ mtd -e bootloader -r write /tmp/breed.bin bootloader
 - Unchecked `skip bootloader`
 - Unchecked `skip eeprom`
 - Upload
-- 
-### OpenWRT WiFi tx power mod to 30dBm
-```sh
-wget -qO- https://raw.githubusercontent.com/xiv3r/20dBm-30dBm-Xiaomi-Mi-4C-Router-Mod/refs/heads/main/mtd2-mod.sh | sh
-```
+
 # Transition from Padavan to other firmwares
 - `telnet 192.168.1.1` and login your credentials
 - Import `16mb dump firmware.bin` to `/tmp`
