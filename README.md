@@ -192,7 +192,7 @@ mtd -e ALL -r write /tmp/keenetic.bin ALL
 # Transition from Openwrt/Xwrt/Immortalwrt/Pcwrt to Keenetic and other Firmware
 - Import the [Xiaomi_4C_Router_Breed.bin](https://github.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/blob/main/Xiaomi_4C_Router_Breed_Env_Variables.bin)
 ```sh
-telnet 192.168.1.1`
+telnet 192.168.1.1
 ```
    - user:`root`
    - pass:`your admin password`
@@ -204,8 +204,9 @@ opkg update && opkg install kmod-mtd-rw && insmod mtd-rw i_want_a_brick=1
 ```sh
 cd /tmp && wget -O breed.bin https://github.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/blob/main/Xiaomi_4C_Router_Breed_Env_Variables.bin
 ```
+## Flashing
 ```sh
-mtd -e bootloader -r write /tmp/breed.bin bootloader
+mtd -r write /tmp/breed.bin bootloader
 ```
 - Router will reboot
 - Goto 👉 [192.68.1.1](http://192.168.1.1) > `upgrade` > `Programmer firmware` > import `keenetic 16MB dump` from download 
