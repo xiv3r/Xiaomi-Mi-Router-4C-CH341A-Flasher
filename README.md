@@ -134,9 +134,8 @@ flashrom -VV -p ch341a_spi -c GD25B128B/GD25Q128B -v -E -w /home/user/Downloads/
 
 • Dependencies:
 ```sh
-apt update && apt upgrade -y && apt install git wget python3 python-pip inetutils -y
+termux-setup-storage && apt update && apt upgrade -y && apt install git wget curl python3 python-pip inetutils -y
 ```
-
 # Notes
 > [!Note]
 > - To check mtd partitions `cat /proc/mtd`
@@ -147,12 +146,18 @@ apt update && apt upgrade -y && apt install git wget python3 python-pip inetutil
 > - You can use wget, scp, http fileserver to import firmware into `/tmp` directory and flash
 
 ### Mode of firmware import
-  - `cd Download && scp 16mb_firmware.bin root@192.168.1.1:/tmp`
-  - `cd Download && python3 -m http.server` (dhcp ip assign):8000 e.g: `wget 192.168.1.111:8000/16mb_firmware.bin`
+> opt 1
+  - `cd storage/downloads && scp 16mb_firmware.bin root@192.168.1.1:/tmp`
+> opt 2
+  - `cd storage/downloads && python3 -m http.server` (dhcp ip assign):8000 e.g: `wget 192.168.1.111:8000/16mb_firmware.bin`
+> opt 3
   - `cd /tmp && wget https://github.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/releases/download/V1/Full-KeeneticOS_4.1.7_MOD.bin`
- > Flashing
+## Flashing
   - `mtd -e ALL -r write /tmp/16mb_firmware.bin ALL`
-# Transition from Stock to other firmwares
+
+<br><br>
+
+# Transition from Stock to other Firmware
 • Using my Modified version of openwrt-invasion
 ```sh
 termux-setup-storage && pkg update && pkg upgrade && pkg install curl && curl https://raw.githubusercontent.com/xiv3r/termux-openwrt-invasion/refs/heads/main/openwrt-invasion.sh | sh && cd openwrt-invasion
@@ -175,21 +180,24 @@ python3 remote_command_execution_vulnerability.py
 ```sh
 cd /tmp && wget -O Keenetic.bin https://github.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/releases/download/V1/Full-KeeneticOS_4.1.7_MOD.bin
 ```
-• Flashing the 16mb dump firmware 
+## Flashing
 ```sh
 mtd -e ALL -r write /tmp/keenetic.bin ALL
 ```
 - Wait for 15 minutes until the reboot will prompted
 - Goto [192.168.1.1](http://192.168.1.1/)
 
-# Transition from Openwrt/Xwrt/Immortalwrt/pcwrt to Keenetic and others
+<br><br>
+
+# Transition from Openwrt/Xwrt/Immortalwrt/Pcwrt to Keenetic and other Firmware
 - Import the [Xiaomi_4C_Router_Breed.bin](https://github.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/blob/main/Xiaomi_4C_Router_Breed_Env_Variables.bin)
 ```sh
 telnet 192.168.1.1`
 ```
    - user:`root`
    - pass:`your admin password`
-- Breed bootloader installation
+ 
+- Bootloader breed installation
 ```sh 
 opkg update && opkg install kmod-mtd-rw && insmod mtd-rw i_want_a_brick=1
 ```
@@ -207,23 +215,30 @@ mtd -e bootloader -r write /tmp/breed.bin bootloader
 - Unchecked `skip eeprom`
 - Upload
 
+<br><br>
+
 `OpenWRT WiFi tx power mod to 30dBm`
 ```sh
 wget -qO- https://raw.githubusercontent.com/xiv3r/20dBm-30dBm-Xiaomi-Mi-4C-Router-Mod/refs/heads/main/mtd2-mod.sh | sh
 ```
-# Transition from Keenetic to Openwrt and others
+<br><br>
+
+# Transition from Keenetic to Openwrt and other Firmware
 - Hold the reset button for 5 seconds while powering on the router
 - Goto 👉[192.168.1.1](http://192.168.1.1) > `upgrade` > `programmer firmware` > import `openwrt 16MB dump` from download
 <img src="https://github.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/blob/main/src/backup.jpg">
 
 - Unchecked `skip bootloader`
 - Unchecked `skip eeprom`
-- Upload
+- Apply
+
+<br><br>
 
 # Transition from Padavan to other firmwares
 - `telnet 192.168.1.1` and login your credentials
 - Import `16mb dump firmware.bin` to `/tmp`
 - e.g ` cd /tmp && wget -O keenetic.bin https://github.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/releases/download/V1/Full-KeeneticOS_4.1.7_MOD.bin`
+## Flashing
 ```sh
 mtd -e ALL -r write /tmp/keenetic.bin ALL
 ```
