@@ -130,18 +130,18 @@ flashrom -VV -p ch341a_spi -c GD25B128B/GD25Q128B -v -E -w /home/user/Downloads/
 <h1 align="center"> Termux </h1>
 
 # Requirements
-- Access Point Router/CPE (Wired Bridge) (required) if `ALL` exit in the MTD partition tables
+- Access Point Router/CPE (Wired Bridge) (required) if `ALL` exist in the MTD partition tables
 - CH341A Programmer (optional) if there's no `ALL` existed in the MTD partition tables
 - Termux
 
 • Dependencies:
 ```sh
-termux-setup-storage && apt update && apt upgrade -y && apt install git wget curl python3 python-pip inetutils -y
+apt update && apt upgrade -y && apt install git wget curl python3 python-pip inetutils -y
 ```
 # Notes
 > [!Note]
 > - To check mtd partitions `cat /proc/mtd`
-> - If mtd `ALL` partition is found yo can flash it easily but if not found otherwise flash the eeprom with CH341a programmer
+> - If mtd `ALL` partition is found you can flash it easily, if not otherwise flash the eeprom with CH341a programmer
 > - MTD `ALL` Partition can flash all 16MB dump firmware from the download section
 > - Keenetic Breed `Programmer Firmware` can Flash all 16MB dump firmware from the download section
 > - All 16MB firmware dump are stable for transitioning
