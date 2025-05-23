@@ -1,4 +1,4 @@
-# <h1 align="center">CH341A Programmer for dumping, installing, reflashing and recovery of Xiaomi Router 4C</h1>
+# Xiaomi Mi Router 4C
 
 ## Notes
 > [!Note]
@@ -8,7 +8,7 @@
 > - If the programmer fails to read the eeprom sectors all you have to do is read the `SREG or Status Register` and `unchecked all `checked area or set all number `1` into `0` and then `Write Register`.
 
 
-# <h1 align="center"> Windows </h1>
+# Windows
 
 - Available Firmwares: | Stock Firmware | Openwrt | X-WRT | Keenetic | PCWRT | ImmortalWRT | Padavan |
 
@@ -18,7 +18,7 @@
 
 - Download [CH341PAR.EXE](https://raw.githubusercontent.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/main/CH341PAR.EXE) & [CH341SER.EXE](https://raw.githubusercontent.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/main/CH341SER.EXE) and install
 
-### Setup
+## Setup
 > - connect the ch341a clip to Xiaomi 4c router EEPROM, open asprogrammer then `detect` the chip select the specific router IC model, click `read` the IC and make a backup then proceed to erase ic, load the 16mb firmware into it (stock, openwrt, padavan, keenetic, immortal) then click `write` IC click yes and wait after it finish finally connect your router to your pc and open 192.168.1.1(3rd party) or 192.168.31.1(stock)
 
 
@@ -41,11 +41,10 @@
 ![image](https://github.com/xiv3r/Xiaomi-Router-4C-CH34A-flash-firmware/assets/117867334/466c5aad-61c9-498a-bd1e-c9171fe64c86)
 
 
-<br><br></br>
+-------
+# Linux
 
-# <h1 align="center"> Linux </h1>
-
-# Driver Auto install (optional)
+## Driver Auto install (optional)
 ```sh
 sudo apt update && wget -qO- https://raw.githubusercontent.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/refs/heads/main/driver.sh | sudo sh
 ```
@@ -60,7 +59,7 @@ usbserial             45056  1 ch341
 
 <br><br></br>
 
-# Install IMSProg:
+# IMSProg:
 
 > [!Note]
 > - if the EEPROM unable to read by the programmer go to `Imsprog Settings` -> `CHIP Info` -> `Read Status Register` and replace all number `1` into `0` and `Write` then begin flashing the firmware.
@@ -73,8 +72,10 @@ usbserial             45056  1 ch341
 
 - Download and install IMSProg
 ```sh
-sudo apt update && sudo apt install imsprog -y
+sudo apt update
+sudo apt install imsprog -y
 ```
+
 - Dependencies
 ```sh
 sudo apt install bc build-essential gcc cmake make linux-headers-$(uname -r) cmake g++ libusb-1.0-0-dev qtbase5-dev qttools5-dev pkgconf systemd-dev udev zenity wget -y
@@ -101,9 +102,10 @@ sudo make install
 <br>
 </br>
 
-# Install Flashrom:
+# Flashrom:
 ```sh
-sudo apt update ; sudo apt install flashrom -y
+sudo apt update
+sudo apt install flashrom -y
 ```
 
 # <h1 align="center"> Flashing with Flashrom </h1>
@@ -114,20 +116,24 @@ sudo apt update ; sudo apt install flashrom -y
 ```sh
 flashrom -VV -p ch341a_spi -r backup.bin
 ```
-- Backup Dump firmware: 
+- Backup the Dump firmware: 
 ```sh
 flashrom -VV -p ch341a_spi -c GD25B128B/GD25Q128B -r MIR4C-dump.bin
 ```
-- Flash New Dump firmware:
+- Flash Newly Dump firmware:
 ```sh
 flashrom -VV -p ch341a_spi -c GD25B128B/GD25Q128B -v -E -w /home/user/Downloads/MIR4C-dump.bin
 ```
-
 <br><br></br>
 
-<h1 align="center"> Termux </h1>
 
-# Requirements
+<details><summary>
+ 
+# Termux
+
+</summary>
+
+## Requirements
 - Access Point Router/CPE (Wired Bridge) (required) if `ALL` exist in the MTD partition tables
 - CH341A Programmer (optional) if there's no `ALL` existed in the MTD partition tables
 - Termux
@@ -136,7 +142,7 @@ flashrom -VV -p ch341a_spi -c GD25B128B/GD25Q128B -v -E -w /home/user/Downloads/
 ```sh
 apt update && apt upgrade -y && apt install git wget curl python3 python-pip inetutils -y
 ```
-# Notes
+## Notes
 > [!Note]
 > - To check mtd partitions `cat /proc/mtd`
 > - If mtd `ALL` partition is found you can flash it easily, if not otherwise flash the eeprom with CH341a programmer
@@ -145,19 +151,19 @@ apt update && apt upgrade -y && apt install git wget curl python3 python-pip ine
 > - All 16MB firmware dump are stable for transitioning
 > - You can use wget, scp, http fileserver to import firmware into `/tmp` directory and flash
 
-### Mode of firmware import
+## way to import the firmware
 > opt 1
   - `cd storage/downloads && scp 16mb_firmware.bin root@192.168.1.1:/tmp`
 > opt 2
   - `cd storage/downloads && python3 -m http.server` (dhcp ip assign):8000 e.g: `wget 192.168.1.111:8000/16mb_firmware.bin`
 > opt 3
   - `cd /tmp && wget https://github.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/releases/download/V1/Full-KeeneticOS_4.1.7_MOD.bin`
-## Flashing
+## Flash
   - `mtd -e ALL -r write /tmp/16mb_firmware.bin ALL`
 
 <br><br>
 
-# Transition from Stock to other Firmware
+## Transition from Stock to other Firmware
 • Using my Modified version of openwrt-invasion
 ```sh
 termux-setup-storage && pkg update && pkg upgrade && pkg install curl && curl https://raw.githubusercontent.com/xiv3r/termux-openwrt-invasion/refs/heads/main/openwrt-invasion.sh | sh && cd openwrt-invasion
@@ -180,16 +186,14 @@ python3 remote_command_execution_vulnerability.py
 ```sh
 cd /tmp && wget -O Keenetic.bin https://github.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/releases/download/V1/Full-KeeneticOS_4.1.7_MOD.bin
 ```
-## Flashing
+## Flash
 ```sh
 mtd -e ALL -r write /tmp/keenetic.bin ALL
 ```
 - Wait for 15 minutes until the reboot will prompted
 - Goto [192.168.1.1](http://192.168.1.1/)
 
-<br><br>
-
-# Transition from Openwrt/Xwrt/Immortalwrt/Pcwrt to Keenetic and other Firmware
+## Openwrt/Xwrt/Immortalwrt/Pcwrt to Keenetic and other Firmware
 - Import the [Xiaomi_4C_Router_Breed.bin](https://github.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/blob/main/Xiaomi_4C_Router_Breed_Env_Variables.bin)
 ```sh
 telnet 192.168.1.1
@@ -204,7 +208,7 @@ opkg update && opkg install kmod-mtd-rw && insmod mtd-rw i_want_a_brick=1
 ```sh
 cd /tmp && wget -O breed.bin https://github.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/blob/main/Xiaomi_4C_Router_Breed_Env_Variables.bin
 ```
-## Flashing
+## Flash
 ```sh
 mtd -r write /tmp/breed.bin bootloader
 ```
@@ -216,15 +220,13 @@ mtd -r write /tmp/breed.bin bootloader
 - Unchecked `skip eeprom`
 - Upload
 
-<br><br>
-
 `OpenWRT WiFi tx power mod to 30dBm`
 ```sh
 wget -qO- https://raw.githubusercontent.com/xiv3r/20dBm-30dBm-Xiaomi-Mi-4C-Router-Mod/refs/heads/main/mtd2-mod.sh | sh
 ```
 <br><br>
 
-# Transition from Keenetic to Openwrt and other Firmware
+## Keenetic to Openwrt and other Firmware
 - Hold the reset button for 5 seconds while powering on the router
 - Goto 👉[192.168.1.1](http://192.168.1.1) > `upgrade` > `programmer firmware` > import `openwrt 16MB dump` from download
 <img src="https://github.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/blob/main/src/backup.jpg">
@@ -233,15 +235,14 @@ wget -qO- https://raw.githubusercontent.com/xiv3r/20dBm-30dBm-Xiaomi-Mi-4C-Route
 - Unchecked `skip eeprom`
 - Apply
 
-<br><br>
-
-# Transition from Padavan to other firmwares
+## Padavan to other Firmware
 - `telnet 192.168.1.1` and login your credentials
 - Import `16mb dump firmware.bin` to `/tmp`
 - e.g ` cd /tmp && wget -O keenetic.bin https://github.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/releases/download/V1/Full-KeeneticOS_4.1.7_MOD.bin`
-## Flashing
+## Flash
 ```sh
 mtd -e ALL -r write /tmp/keenetic.bin ALL
 ```
+</details>
 
-# [USB MOD](https://github.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/blob/main/src/USB-MOD.jpg)
+## [USB MOD](https://github.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/blob/main/src/USB-MOD.jpg)
