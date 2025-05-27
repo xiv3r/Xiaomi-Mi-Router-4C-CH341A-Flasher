@@ -1,24 +1,23 @@
-# Xiaomi Mi Router 4C
-
-## Notes
+# Notes
 > [!Note]
 > - Unchecked `Verify` from the programmer settings before flashing it
 > - `Unprotect` eeprom before flashing..
 > - Dangerous and irreversible actions, set only required options (if may failed buy a new ones and then soldered it unto the board)
 > - If the programmer fails to read the eeprom sectors all you have to do is read the `SREG or Status Register` and `unchecked all `checked area or set all number `1` into `0` and then `Write Register`.
 
+# Firmware
 
-# Windows
+| Stock Firmware | Openwrt | X-WRT | Keenetic | PCWRT | ImmortalWRT | Padavan |
 
-- Available Firmwares: | Stock Firmware | Openwrt | X-WRT | Keenetic | PCWRT | ImmortalWRT | Padavan |
+# Windows Requirements
 
-- [Full Dump Firmware DOWNLOAD](https://github.com/xiv3r/Xiaomi-Router-4C-CH341A-flasher/releases/tag/V1)
+- [Dump Firmware](https://github.com/xiv3r/Xiaomi-Router-4C-CH341A-flasher/releases/tag/V1)
 
-- [ASProgrammer](https://github.com/nofeletru/UsbAsp-flash/releases)
+- [AsProgrammer](https://github.com/nofeletru/UsbAsp-flash/releases)
 
-- Download [CH341PAR.EXE](https://raw.githubusercontent.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/main/CH341PAR.EXE) & [CH341SER.EXE](https://raw.githubusercontent.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/main/CH341SER.EXE) and install
+- Drivers [CH341PAR.EXE](https://raw.githubusercontent.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/main/CH341PAR.EXE) & [CH341SER.EXE](https://raw.githubusercontent.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/main/CH341SER.EXE)
 
-## Setup
+# Setup
 > - connect the ch341a clip to Xiaomi 4c router EEPROM, open asprogrammer then `detect` the chip select the specific router IC model, click `read` the IC and make a backup then proceed to erase ic, load the 16mb firmware into it (stock, openwrt, padavan, keenetic, immortal) then click `write` IC click yes and wait after it finish finally connect your router to your pc and open 192.168.1.1(3rd party) or 192.168.31.1(stock)
 
 
@@ -41,8 +40,8 @@
 ![image](https://github.com/xiv3r/Xiaomi-Router-4C-CH34A-flash-firmware/assets/117867334/466c5aad-61c9-498a-bd1e-c9171fe64c86)
 
 
--------
-# Linux
+--------------------
+# Linux Requirements
 
 ## Driver Auto install (optional)
 ```sh
@@ -63,12 +62,6 @@ usbserial             45056  1 ch341
 
 > [!Note]
 > - if the EEPROM unable to read by the programmer go to `Imsprog Settings` -> `CHIP Info` -> `Read Status Register` and replace all number `1` into `0` and `Write` then begin flashing the firmware.
-
-
-- Available Firmwares: | Stock Firmware | Openwrt | X-WRT | Keenetic | PCWRT | ImmortalWRT | Padavan |
-
-- [Full Dump Firmware DOWNLOAD](https://github.com/xiv3r/Xiaomi-Router-4C-CH341A-flasher/releases/tag/V1)
- 
 
 - Download and install IMSProg
 ```sh
@@ -100,15 +93,13 @@ sudo make install
 
 <br>
 <br>
-</br>
 
-# Flashrom:
+# Flashrom
 ```sh
 sudo apt update
 sudo apt install flashrom -y
 ```
 
-# <h1 align="center"> Flashing with Flashrom </h1>
 > [!Note]
 > - chip type depends on your EEPROM type detected by flashrom like GD25B128B/'GD25Q128B', GD25Q127C/'GD25Q128C' you may add it to the -c flags before backup or flashing
 
@@ -124,12 +115,13 @@ flashrom -VV -p ch341a_spi -c GD25B128B/GD25Q128B -r MIR4C-dump.bin
 ```sh
 flashrom -VV -p ch341a_spi -c GD25B128B/GD25Q128B -v -E -w /home/user/Downloads/MIR4C-dump.bin
 ```
-<br><br></br>
+<br><br>
 
 
 <details><summary>
  
 # Termux
+> flash the firmware without the programmer 
 
 </summary>
 
