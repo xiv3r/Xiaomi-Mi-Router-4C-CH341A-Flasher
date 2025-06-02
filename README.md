@@ -5,7 +5,7 @@
 > - Dangerous and irreversible actions, set only required options (if may failed buy a new ones and then soldered it unto the board)
 > - If the programmer fails to read the eeprom sectors all you have to do is read the `SREG or Status Register` and `unchecked all `checked area or set all number `1` into `0` and then `Write Register`.
 
-# Firmware
+# [Firmware](https://github.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/releases/tag/V1)
 > supported firmware
 
 | Stock Firmware | Openwrt | X-WRT | Keenetic | PCWRT | ImmortalWRT | Padavan |
