@@ -45,11 +45,11 @@
 --------------------
 # Linux Requirements
 
-## Driver Auto install (optional)
+## Driver install (optional)
 ```sh
 sudo apt update && wget -qO- https://raw.githubusercontent.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/refs/heads/main/driver.sh | sudo sh
 ```
-- Check existing drivers
+- Check the existing drivers
 ```sh
 lsmod | grep ch341
 Bus 001 Device 002: ID 1a86:5512 QinHeng Electronics HL-340 USB-Serial adapter
