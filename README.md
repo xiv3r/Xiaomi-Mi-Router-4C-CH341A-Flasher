@@ -241,3 +241,13 @@ mtd -e ALL -r write /tmp/keenetic.bin ALL
 
 # [USB MOD](https://github.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/blob/main/src/USB-MOD.jpg)
 > USB Mod support for USB Ethernet (USB Tethering/RNDIS), USB Modem (4G/LTE/5G) and USB storage (NAS).
+
+
+
+# ⚠️ FIRMWARE DISTRIBUTION DISCLAIMER
+This firmware is provided for non-commercial use only. Redistribution is strictly prohibited.
+- You may Install this firmware on devices for which it was intended.  
+
+### By using this firmware, you acknowledge that:  
+- Unauthorized distribution violates intellectual property rights.  
+- The provider assumes **no liability** for damages from misuse.  
