@@ -46,12 +46,14 @@
 # Linux Requirements
 
 ## Install Driver (optional)
+[See more...](https://github.com/WCHSoftGroup/ch341ser_linux)
 ```
 sudo apt update
 sudo apt install make cmake bc build-essential -y
 git clone https://github.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher.git
 cd Xiaomi-Mi-Router-4C-CH341A-Flasher/driver/ch341a-ser
 sudo make
+sudo make load
 sudo make install
 ```
 - Check the existing drivers
