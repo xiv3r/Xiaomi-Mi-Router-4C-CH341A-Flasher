@@ -141,7 +141,7 @@ flashrom -VV -p ch341a_spi -c GD25B128B/GD25Q128B -v -E -w /home/user/Downloads/
 
 • Dependencies:
 ```sh
-apt update && apt upgrade -y && apt install git wget curl python3 python-pip inetutils -y
+pkg update && pkg upgrade -y && pkg install git wget python python-pip -y
 ```
 ## Notes
 > [!Note]
@@ -152,13 +152,14 @@ apt update && apt upgrade -y && apt install git wget curl python3 python-pip ine
 > - All 16MB firmware dump are stable for transitioning
 > - You can use wget, scp, http fileserver to import firmware into `/tmp` directory and flash
 
-## way to import the firmware
+## Method to import the firmware
 > opt 1
   - `cd storage/downloads && scp 16mb_firmware.bin root@192.168.1.1:/tmp`
 > opt 2
   - `cd storage/downloads && python3 -m http.server` (dhcp ip assign):8000 e.g: `wget 192.168.1.111:8000/16mb_firmware.bin`
 > opt 3
   - `cd /tmp && wget https://github.com/xiv3r/Xiaomi-Mi-Router-4C-CH341A-Flasher/releases/download/V1/Full-KeeneticOS_4.1.7_MOD.bin`
+
 ## Flash
   - `mtd -e ALL -r write /tmp/16mb_firmware.bin ALL`
 
