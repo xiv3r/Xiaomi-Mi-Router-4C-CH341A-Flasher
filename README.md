@@ -253,9 +253,11 @@ mtd -e ALL -r write /tmp/keenetic.bin ALL
 <br><br>
 
 # ⚠️ FIRMWARE DISTRIBUTION DISCLAIMER
+```txt
 This firmware is provided for non-commercial use only. Redistribution is strictly prohibited.
 - You may Install this firmware on devices for which it was intended.  
 
-### By using this firmware, you acknowledge that:  
+By using this firmware, you acknowledge that:  
 - Unauthorized distribution violates intellectual property rights.  
 - The provider assumes **no liability** for damages from misuse.  
+```
